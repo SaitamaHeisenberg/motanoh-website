@@ -1,0 +1,431 @@
+/* ============================================
+   ANIMATIONS & TRANSITIONS
+   ============================================ */
+
+/* ============================================
+   FADE IN ANIMATIONS
+   ============================================ */
+
+/* Fade in from bottom */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in from left */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade in from right */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Simple fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   GOLD SHIMMER EFFECT
+   ============================================ */
+@keyframes goldShimmer {
+    0% {
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    }
+}
+
+/* ============================================
+   SCALE ANIMATIONS
+   ============================================ */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ============================================
+   ANIMATION UTILITY CLASSES
+   ============================================ */
+
+/* Elements that will animate on scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+}
+
+/* Fade in up animation class */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Fade in left animation class */
+.fade-in-left {
+    animation: fadeInLeft 0.8s ease forwards;
+}
+
+/* Fade in right animation class */
+.fade-in-right {
+    animation: fadeInRight 0.8s ease forwards;
+}
+
+/* Simple fade in class */
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Scale in animation class */
+.scale-in {
+    animation: scaleIn 0.6s ease forwards;
+}
+
+/* ============================================
+   STAGGERED ANIMATIONS
+   ============================================ */
+.stagger-animation > * {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.stagger-animation > *:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.stagger-animation > *:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.stagger-animation > *:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.stagger-animation > *:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.stagger-animation > *:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.stagger-animation > *:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+/* ============================================
+   PARALLAX EFFECT (for hero section)
+   ============================================ */
+.parallax {
+    transform: translateY(0);
+    transition: transform 0.5s ease-out;
+}
+
+/* ============================================
+   HOVER ANIMATIONS
+   ============================================ */
+
+/* Gold glow on hover */
+.glow-on-hover {
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.glow-on-hover:hover {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    border-color: var(--accent-gold);
+}
+
+/* Lift effect on hover */
+.lift-on-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lift-on-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 40px rgba(212, 175, 55, 0.3);
+}
+
+/* ============================================
+   LOADING ANIMATIONS
+   ============================================ */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+/* ============================================
+   TEXT ANIMATIONS
+   ============================================ */
+
+/* Typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Gradient text animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light), var(--accent-gold));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* ============================================
+   BORDER ANIMATIONS
+   ============================================ */
+
+/* Animated border */
+@keyframes borderRotate {
+    0% {
+        border-image-source: linear-gradient(0deg, var(--accent-gold), transparent);
+    }
+    25% {
+        border-image-source: linear-gradient(90deg, var(--accent-gold), transparent);
+    }
+    50% {
+        border-image-source: linear-gradient(180deg, var(--accent-gold), transparent);
+    }
+    75% {
+        border-image-source: linear-gradient(270deg, var(--accent-gold), transparent);
+    }
+    100% {
+        border-image-source: linear-gradient(360deg, var(--accent-gold), transparent);
+    }
+}
+
+/* ============================================
+   SCROLL INDICATOR ANIMATION
+   ============================================ */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+/* ============================================
+   PAGE TRANSITION
+   ============================================ */
+@keyframes pageTransition {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    animation: pageTransition 0.5s ease;
+}
+
+/* ============================================
+   NAVIGATION ANIMATIONS
+   ============================================ */
+
+/* Nav link underline animation */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Mobile menu slide animation */
+.nav-menu {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ============================================
+   CARD REVEAL ANIMATION
+   ============================================ */
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.card-reveal {
+    animation: cardReveal 0.6s ease forwards;
+}
+
+/* ============================================
+   GOLDEN DIVIDER ANIMATION
+   ============================================ */
+@keyframes dividerExpand {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100px;
+    }
+}
+
+.section-divider.animate {
+    animation: dividerExpand 0.8s ease forwards;
+}
+
+/* ============================================
+   IMAGE REVEAL ANIMATION
+   ============================================ */
+@keyframes imageReveal {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+.image-reveal {
+    animation: imageReveal 1s ease forwards;
+}
+
+/* ============================================
+   BUTTON RIPPLE EFFECT
+   ============================================ */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* Use GPU acceleration for smoother animations */
+.service-card,
+.team-member,
+.contact-item,
+.nav-menu {
+    will-change: transform;
+}
+
+/* Remove will-change after animation completes to save memory */
+.service-card:not(:hover),
+.team-member:not(:hover) {
+    will-change: auto;
+}
+
+/* ============================================
+   ACCESSIBILITY - Respect reduced motion
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

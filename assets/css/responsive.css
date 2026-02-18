@@ -1,0 +1,502 @@
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE FIRST APPROACH
+   ============================================ */
+
+/* ============================================
+   MOBILE DEVICES (320px - 767px)
+   Default styles are mobile-first
+   ============================================ */
+
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+    /* Typography adjustments */
+    :root {
+        --fs-h1: 2rem;
+        --fs-h2: 1.75rem;
+        --fs-h3: 1.25rem;
+        --fs-body: 1rem;
+    }
+
+    /* Container */
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    /* Section spacing */
+    .section {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    /* Navigation */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(10px);
+        padding: var(--spacing-lg);
+        gap: var(--spacing-md);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all var(--transition-normal);
+        pointer-events: none;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .nav-link {
+        text-align: center;
+        padding: var(--spacing-sm) 0;
+        font-size: 1.125rem;
+    }
+
+    .language-toggle {
+        justify-content: center;
+        margin-top: var(--spacing-sm);
+    }
+
+    /* Adjust nav links for mobile */
+    .nav-link {
+        padding: var(--spacing-sm) var(--spacing-md);
+        width: 100%;
+    }
+
+    /* Disable animations on mobile menu for performance */
+    .nav-menu.active .nav-link {
+        animation: none;
+        opacity: 1;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 100vh;
+        padding-top: 72px;
+    }
+
+    /* Hero Brand - Mobile adjustments */
+    .brand-name {
+        font-size: clamp(2rem, 10vw, 3rem);
+        gap: clamp(0.3rem, 1vw, 0.8rem);
+    }
+
+    .brand-ampersand {
+        font-size: clamp(1.5rem, 8vw, 2.5rem);
+    }
+
+    .brand-tagline p {
+        font-size: clamp(0.875rem, 3vw, 1.125rem);
+    }
+
+    .brand-tagline p::before,
+    .brand-tagline p::after {
+        display: none; /* Hide decorative dashes on mobile */
+    }
+
+    /* Hide geometric shapes on mobile for performance */
+    .geometric-shapes {
+        display: none;
+    }
+
+    /* Reduce particle count on mobile */
+    .particles-canvas {
+        opacity: 0.5;
+    }
+
+    /* Hero Highlights - Stack vertically on mobile */
+    .hero-highlights {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+    }
+
+    .highlight-item {
+        min-width: auto;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .highlight-label {
+        font-size: 0.875rem;
+    }
+
+    /* About Section - Statistics & Values */
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .stat-card {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .stat-value {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .value-item {
+        padding: var(--spacing-md);
+    }
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .service-card {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    /* Team Grid */
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer 2026 */
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .footer-brand-col {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-links {
+        text-align: center;
+    }
+
+    .footer-links a {
+        justify-content: center;
+    }
+
+    .footer-contact {
+        text-align: left;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-wave svg {
+        height: 50px;
+    }
+}
+
+/* ============================================
+   TABLET DEVICES (768px - 1024px)
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Typography adjustments */
+    :root {
+        --fs-h1: 2.75rem;
+        --fs-h2: 2rem;
+        --fs-h3: 1.5rem;
+    }
+
+    /* Navigation */
+    .nav-container {
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .nav-menu {
+        gap: var(--spacing-md);
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 90vh;
+    }
+
+    /* Hero Brand - Tablet adjustments */
+    .brand-name {
+        font-size: clamp(3.5rem, 7vw, 5rem);
+    }
+
+    .brand-ampersand {
+        font-size: clamp(3rem, 5vw, 4rem);
+    }
+
+    .brand-tagline p {
+        font-size: clamp(1.125rem, 2vw, 1.375rem);
+    }
+
+    /* Hero Highlights - 3 columns on tablet */
+    .hero-highlights {
+        gap: var(--spacing-lg);
+    }
+
+    .highlight-item {
+        min-width: 160px;
+    }
+
+    /* About Section - Statistics & Values on tablet */
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    /* Services Grid - 2 columns on tablet */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    /* Ensure last card spans full width if odd number */
+    .services-grid .service-card:nth-child(5) {
+        grid-column: 1 / -1;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Team Grid */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Footer 2026 */
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-2xl);
+    }
+
+    .footer-brand-col {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    .footer-wave svg {
+        height: 60px;
+    }
+}
+
+/* ============================================
+   DESKTOP DEVICES (1025px and above)
+   ============================================ */
+@media (min-width: 1025px) {
+    /* About Section - Statistics & Values on desktop */
+    .about-stats {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-xl);
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-xl);
+    }
+
+    /* Services Grid - 3 columns on desktop */
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Adjust service cards layout for 5 items */
+    .services-grid .service-card:nth-child(4),
+    .services-grid .service-card:nth-child(5) {
+        grid-column: span 1;
+    }
+
+    /* Center the last two cards */
+    .services-grid {
+        justify-items: center;
+    }
+
+    .services-grid .service-card:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 2;
+        margin-left: auto;
+    }
+
+    .services-grid .service-card:nth-child(5) {
+        grid-column: 3 / 4;
+        grid-row: 2;
+        margin-right: auto;
+    }
+
+    /* Team Grid */
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        max-width: 1000px;
+        margin: var(--spacing-2xl) auto 0;
+    }
+
+    /* Footer 2026 - Full Grid on Desktop */
+    .footer-main {
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    }
+
+    .footer-brand-col {
+        grid-column: auto;
+        text-align: left;
+    }
+
+    .footer-title::after {
+        left: 0;
+        transform: none;
+    }
+}
+
+/* ============================================
+   LARGE DESKTOP (1441px and above)
+   ============================================ */
+@media (min-width: 1441px) {
+    /* Increase max-width for very large screens */
+    .container {
+        max-width: 1600px;
+    }
+
+    .nav-container {
+        max-width: 1600px;
+    }
+
+    /* Slightly larger typography */
+    :root {
+        --fs-h1: 4rem;
+        --fs-h2: 2.75rem;
+        --fs-h3: 2rem;
+        --fs-body: 1.25rem;
+    }
+
+    /* Services Grid */
+    .services-grid {
+        max-width: 1400px;
+        margin: var(--spacing-2xl) auto 0;
+    }
+}
+
+/* ============================================
+   LANDSCAPE ORIENTATION (Mobile)
+   ============================================ */
+@media (max-width: 767px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: var(--spacing-3xl) 0;
+    }
+
+    .hero-logo {
+        max-width: 300px;
+    }
+
+    .hero-tagline {
+        font-size: 1.125rem;
+    }
+}
+
+/* ============================================
+   TOUCH DEVICES - Remove Hover Effects
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+    /* Remove hover transforms that can cause issues on touch */
+    .service-card:hover {
+        transform: none;
+    }
+
+    .team-member:hover {
+        transform: none;
+    }
+
+    /* Keep border and shadow effects */
+    .service-card:active {
+        transform: scale(0.98);
+    }
+
+    .team-member:active {
+        transform: scale(0.98);
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    /* Hide navigation and footer for printing */
+    .navbar,
+    .footer,
+    .scroll-indicator {
+        display: none;
+    }
+
+    /* Adjust colors for print */
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+
+    /* Ensure links are visible */
+    a::after {
+        content: " (" attr(href) ")";
+    }
+}
+
+/* ============================================
+   REDUCED MOTION PREFERENCE
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .scroll-indicator {
+        animation: none;
+    }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE
+   ============================================ */
+@media (prefers-contrast: high) {
+    :root {
+        --accent-gold: #ffd700;
+        --text-white: #ffffff;
+        --primary-black: #000000;
+    }
+
+    .service-card,
+    .team-member,
+    .contact-item {
+        border-width: 2px;
+    }
+}

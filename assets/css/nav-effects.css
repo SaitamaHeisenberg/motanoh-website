@@ -1,0 +1,194 @@
+/* ============================================
+   NAVIGATION MICRO-INTERACTIONS 2026
+   ============================================ */
+
+/* Ripple Effect on Click */
+.nav-link {
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    pointer-events: none;
+}
+
+.nav-link:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Particle Effect on Hover */
+@keyframes particle-float {
+    0% {
+        transform: translateY(0) translateX(0) scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-30px) translateX(var(--tx)) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Magnetic Effect on Nav Brand */
+.nav-brand a {
+    display: inline-block;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-brand a:hover {
+    transform: scale(1.05);
+}
+
+/* Glow Pulse on Active Link */
+@keyframes glow-pulse {
+    0%, 100% {
+        box-shadow:
+            0 0 20px rgba(212, 175, 55, 0.2),
+            inset 0 0 20px rgba(212, 175, 55, 0.05);
+    }
+    50% {
+        box-shadow:
+            0 0 30px rgba(212, 175, 55, 0.3),
+            inset 0 0 30px rgba(212, 175, 55, 0.08);
+    }
+}
+
+.nav-link.active {
+    animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Smooth Reveal Animation for Navbar on Page Load */
+@keyframes navbar-reveal {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.navbar {
+    animation: navbar-reveal 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Stagger Animation for Nav Links */
+.nav-link {
+    opacity: 0;
+    animation: link-reveal 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes link-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-link:nth-child(1) { animation-delay: 0.1s; }
+.nav-link:nth-child(2) { animation-delay: 0.15s; }
+.nav-link:nth-child(3) { animation-delay: 0.2s; }
+.nav-link:nth-child(4) { animation-delay: 0.25s; }
+.nav-link:nth-child(5) { animation-delay: 0.3s; }
+
+/* Language Toggle Reveal */
+.language-toggle {
+    opacity: 0;
+    animation: link-reveal 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.35s forwards;
+}
+
+/* Navbar Scroll Enhancement */
+.navbar.scrolled {
+    background: linear-gradient(
+        135deg,
+        rgba(10, 10, 10, 0.98) 0%,
+        rgba(26, 26, 26, 0.95) 100%
+    );
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+    border-bottom-color: rgba(212, 175, 55, 0.25);
+}
+
+/* Shimmer Effect on Language Toggle */
+.language-toggle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.language-toggle:hover::after {
+    left: 100%;
+}
+
+/* 3D Lift Effect on Hover */
+.nav-link {
+    transform-style: preserve-3d;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px) translateZ(10px);
+}
+
+/* Smooth Color Transition */
+.nav-link,
+.lang-option {
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus Visible for Accessibility */
+.nav-link:focus-visible,
+.language-toggle:focus-visible {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+/* Premium Gradient Border on Hover */
+.nav-menu::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--accent-gold) 50%,
+        transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-menu:hover::after {
+    opacity: 0.5;
+}

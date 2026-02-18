@@ -1,0 +1,3065 @@
+================================================================================
+    MOTANOH & CO. - DOCUMENTATION COMPLÈTE DU SITE WEB
+    VERSION 2.0 - PREMIUM EDITION 2026
+================================================================================
+
+Document de référence détaillant TOUTES les fonctionnalités, effets,
+animations, couleurs et éléments du site web Motanoh & Co.
+
+Date: Février 2026
+Version: 2.0 Premium Edition
+Statut: Production Ready
+
+================================================================================
+TABLE DES MATIÈRES
+================================================================================
+
+I.    VUE D'ENSEMBLE
+II.   ARCHITECTURE & STRUCTURE DE FICHIERS
+III.  DESIGN SYSTEM (COULEURS, TYPOGRAPHIE, SPACING)
+IV.   SECTIONS DU SITE
+V.    FONCTIONNALITÉS INTERACTIVES
+VI.   EFFETS VISUELS PREMIUM
+VII.  ANIMATIONS
+VIII. SYSTÈME BILINGUE (EN/FR)
+IX.   RESPONSIVE DESIGN
+X.    SEO & OPTIMISATIONS
+XI.   ACCESSIBILITÉ
+XII.  TECHNOLOGIES UTILISÉES
+
+
+================================================================================
+I. VUE D'ENSEMBLE
+================================================================================
+
+NOM DU PROJET: Motanoh & Co. - Corporate Website
+TYPE: Site vitrine one-page (Single Page Application)
+LANGUES: Bilingue (Anglais / Français)
+DESIGN: Premium minimaliste - Noir & Or
+APPROCHE: Mobile-First Responsive Design
+FRAMEWORK: HTML5, CSS3, Vanilla JavaScript (No dependencies)
+
+--------------------------------------------------------------------------------
+ENTREPRISE
+--------------------------------------------------------------------------------
+Nom: Motanoh & Co.
+Secteur: Conseil stratégique / Strategic Advisory
+Slogan EN: "Strategic Advisory Across the Full Business Lifecycle"
+Slogan FR: "Conseil stratégique tout au long du cycle de vie des entreprises"
+Localisation: Côte d'Ivoire
+Contact: Henri-Joel Otokore (Associate, Business Development)
+Téléphone: (+225) 07 57 368 526
+Email: henrijoel.o@motanoh-co.com
+LinkedIn: linkedin.com/company/motanoh
+Site: www.motanoh-co.com
+
+--------------------------------------------------------------------------------
+CARACTÉRISTIQUES PRINCIPALES
+--------------------------------------------------------------------------------
+✓ Design premium noir et or (minimaliste, élégant)
+✓ Loading screen professionnel avec progression animée
+✓ Navigation moderne avec effets glassmorphism
+✓ Hero avec texte stylisé + particules animées + formes géométriques
+✓ Système bilingue complet (EN/FR) avec localStorage
+✓ Formulaire de contact modal avec validation temps réel
+✓ Effets premium 2026: cursor glow, grain texture, tilt 3D
+✓ Footer premium avec wave divider et 4 colonnes
+✓ Back to top button animé avec progress circle
+✓ Scroll progress bar en haut de page
+✓ 100% responsive (mobile, tablet, desktop)
+✓ SEO optimisé (meta tags, structured data, sitemap)
+✓ Accessible WCAG 2.1 AA
+✓ Performance optimisée
+
+
+================================================================================
+II. ARCHITECTURE & STRUCTURE DE FICHIERS
+================================================================================
+
+RACINE DU PROJET:
+motanoh-website/
+│
+├── index.html                          # Fichier HTML principal (unique page)
+├── robots.txt                          # Règles pour moteurs de recherche
+├── sitemap.xml                         # Plan du site XML pour SEO
+├── site.webmanifest                    # Manifest PWA
+├── .htaccess                           # Configuration serveur Apache
+├── README.md                           # Documentation projet
+├── SEO-SETUP.md                        # Guide setup SEO
+├── DEPLOYMENT.md                       # Guide de déploiement
+├── AMELIORATIONS-POSSIBLES.txt         # Liste améliorations futures
+└── DOCUMENTATION-COMPLETE-SITE.txt     # Ce fichier
+│
+├── assets/
+│   │
+│   ├── images/                         # Tous les assets visuels
+│   │   ├── logo-motanoh.jpeg           # Logo principal (typographie or/noir)
+│   │   ├── letmotive.jpeg              # Logo avec slogan
+│   │   ├── business-card.jpeg          # Carte de visite (référence)
+│   │   ├── favicon-16x16.png           # À créer (16x16)
+│   │   ├── favicon-32x32.png           # À créer (32x32)
+│   │   ├── apple-touch-icon.png        # À créer (180x180)
+│   │   ├── android-chrome-192x192.png  # À créer (192x192)
+│   │   ├── android-chrome-512x512.png  # À créer (512x512)
+│   │   ├── og-image.jpg                # À créer (1200x630 pour Open Graph)
+│   │   └── twitter-card.jpg            # À créer (1200x675 pour Twitter)
+│   │
+│   ├── css/                            # Tous les fichiers de styles
+│   │   ├── styles.css                  # Styles principaux (base, variables, sections)
+│   │   ├── nav-effects.css             # Navigation moderne 2026
+│   │   ├── footer-2026.css             # Footer premium + back to top
+│   │   ├── responsive.css              # Media queries (mobile/tablet/desktop)
+│   │   ├── animations.css              # Animations scroll et keyframes
+│   │   ├── premium-effects.css         # Glassmorphism, grain, cursor glow
+│   │   ├── loader.css                  # Loading screen styles
+│   │   └── contact-form.css            # Modal formulaire contact
+│   │
+│   └── js/                             # Tous les scripts JavaScript
+│       ├── main.js                     # Fonctionnalités core (nav, scroll)
+│       ├── language.js                 # Système bilingue (EN/FR)
+│       ├── animations.js               # Animations scroll, particles, hero
+│       ├── premium-effects.js          # Cursor glow, tilt 3D, parallax
+│       ├── loader.js                   # Loading screen + back to top
+│       └── contact-form.js             # Validation formulaire, soumission
+
+TAILLE TOTALE DU PROJET:
+- Fichiers HTML: ~650 lignes
+- Fichiers CSS: ~3500 lignes (total tous fichiers)
+- Fichiers JS: ~1800 lignes (total tous fichiers)
+- Images: 3 actuelles (+ 7 à créer)
+
+POIDS ESTIMÉ:
+- HTML + CSS + JS minifiés: ~150KB
+- Images (compressées): ~200KB
+- Total page: ~350KB (cible < 500KB)
+
+
+================================================================================
+III. DESIGN SYSTEM (COULEURS, TYPOGRAPHIE, SPACING)
+================================================================================
+
+--------------------------------------------------------------------------------
+PALETTE DE COULEURS
+--------------------------------------------------------------------------------
+
+COULEURS PRINCIPALES:
+├─ Noir principal:      #0a0a0a     (Fond général, texte sur or)
+├─ Noir secondaire:     #1a1a1a     (Alternance sections, cards background)
+├─ Or accent:           #d4af37     (Couleur signature, CTA, highlights)
+├─ Or clair:            #e5c158     (Variations, hover states)
+└─ Or foncé:            #b8941f     (Shadows, accents subtils)
+
+COULEURS TEXTE:
+├─ Blanc principal:     #ffffff     (Titres, texte important)
+├─ Gris clair:          #e0e0e0     (Texte secondaire)
+└─ Gris moyen:          #cccccc     (Texte tertiaire, descriptions)
+
+COULEURS TRANSPARENTES (Glassmorphism):
+├─ Noir glass:          rgba(26, 26, 26, 0.7)  (Cards, modals)
+├─ Or glass:            rgba(212, 175, 55, 0.1) (Backgrounds hover)
+└─ Blanc overlay:       rgba(255, 255, 255, 0.05) (Inset highlights)
+
+USAGE PAR ÉLÉMENT:
+- Background body: #0a0a0a (noir principal)
+- Sections alternées: #0a0a0a et #1a1a1a
+- Navigation: Gradient noir avec glassmorphism
+- Boutons CTA: Gradient or (#d4af37 → #e5c158)
+- Cards (services, team): rgba(26, 26, 26, 0.6) avec blur
+- Borders: rgba(212, 175, 55, 0.2)
+- Hover states: or plus clair, box-shadow or
+
+--------------------------------------------------------------------------------
+TYPOGRAPHIE
+--------------------------------------------------------------------------------
+
+FONTS UTILISÉES (Google Fonts):
+
+1. PLAYFAIR DISPLAY (Serif - Headings)
+   - Usage: Tous les titres (h1, h2, h3), logo, brand
+   - Weights: 400 (Regular), 600 (SemiBold), 700 (Bold)
+   - Style: Élégant, classique, premium
+   - Exemple: "Motanoh & Co.", "Our Services"
+
+2. CORMORANT GARAMOND (Serif - Subheadings)
+   - Usage: Sous-titres, taglines, citations
+   - Weights: 300 (Light), 400 (Regular), 600 (SemiBold)
+   - Style: Raffiné, italique pour "&" du logo
+   - Exemple: "Strategic Advisory...", esperluette "&"
+
+3. LATO (Sans-Serif - Body)
+   - Usage: Texte de corps, paragraphes, descriptions
+   - Weights: 300 (Light), 400 (Regular), 700 (Bold)
+   - Style: Lisible, moderne, clean
+   - Exemple: Descriptions services, bio team
+
+TAILLES DE POLICE (Responsive avec clamp):
+
+DESKTOP (1025px+):
+- H1 (Hero brand): clamp(3rem, 8vw, 6rem)      → 48-96px
+- H2 (Sections):   2.5rem                       → 40px
+- H3 (Cards):      1.75rem                      → 28px
+- Body:            1.125rem                     → 18px
+- Small:           0.875rem                     → 14px
+
+TABLET (768px-1024px):
+- H1: clamp(3.5rem, 7vw, 5rem)                  → 56-80px
+- H2: 2rem                                      → 32px
+- H3: 1.5rem                                    → 24px
+
+MOBILE (< 767px):
+- H1: clamp(2rem, 10vw, 3rem)                   → 32-48px
+- H2: 1.75rem                                   → 28px
+- H3: 1.25rem                                   → 20px
+- Body: 1rem                                    → 16px
+
+STYLES TYPOGRAPHIQUES:
+- Letter-spacing: 0.05em (titres), 0.1em (uppercase)
+- Line-height: 1.2 (headings), 1.6-1.8 (body)
+- Font-weight: 700 (titres principaux), 600 (sous-titres), 400 (body)
+
+--------------------------------------------------------------------------------
+SPACING SYSTEM (Design Tokens)
+--------------------------------------------------------------------------------
+
+VARIABLES D'ESPACEMENT:
+--spacing-xs:  8px      (Très petit gap, padding minimal)
+--spacing-sm:  16px     (Petit gap entre éléments)
+--spacing-md:  24px     (Gap standard)
+--spacing-lg:  32px     (Gap large entre sections)
+--spacing-xl:  48px     (Padding sections)
+--spacing-2xl: 64px     (Grands espacements)
+--spacing-3xl: 96px     (Padding vertical sections majeures)
+
+USAGE:
+- Gap entre éléments proches: 8-16px
+- Padding cards: 24-32px
+- Margin entre paragraphes: 16-24px
+- Padding sections: 64-96px vertical
+- Container max-width: 1400px (desktop), 1600px (large)
+
+--------------------------------------------------------------------------------
+OMBRES (SHADOWS)
+--------------------------------------------------------------------------------
+
+VARIABLES:
+--shadow-gold: 0 0 30px rgba(212, 175, 55, 0.3)
+--shadow-gold-strong: 0 8px 40px rgba(212, 175, 55, 0.4)
+
+USAGE:
+- Cards hover: 0 8px 24px rgba(212, 175, 55, 0.2)
+- Buttons: 0 4px 20px rgba(212, 175, 55, 0.3)
+- Text shadows: 0 4px 8px rgba(0, 0, 0, 0.5)
+- Glassmorphism: 0 8px 32px rgba(0, 0, 0, 0.3)
+
+--------------------------------------------------------------------------------
+TRANSITIONS
+--------------------------------------------------------------------------------
+
+VARIABLES:
+--transition-fast: 0.2s ease
+--transition-normal: 0.3s ease
+--transition-slow: 0.5s ease
+
+EASING:
+- Cubic-bezier standard: cubic-bezier(0.4, 0, 0.2, 1)
+- Ease-in-out pour animations symétriques
+- Ease-out pour entrées
+- Ease-in pour sorties
+
+
+================================================================================
+IV. SECTIONS DU SITE
+================================================================================
+
+Le site est structuré en une seule page (SPA) avec 6 sections principales:
+
+--------------------------------------------------------------------------------
+1. LOADING SCREEN (Overlay au chargement)
+--------------------------------------------------------------------------------
+
+DESCRIPTION:
+Écran de chargement qui apparaît au lancement du site, disparaît après
+chargement complet (max 4 secondes).
+
+POSITION: Fixed, z-index: 99999, plein écran
+
+ÉLÉMENTS:
+□ Fond: Gradient noir (#0a0a0a → #1a1a1a)
+□ Particules flottantes en arrière-plan (5 particules or animées)
+□ Spinner rotatif doré (80x80px, border animation)
+□ Texte "Motanoh & Co." en Playfair Display
+  - Animation brandPulse (pulse + scale)
+  - Effet brandReveal (texte qui se révèle)
+□ Barre de progression horizontale
+  - Largeur: 300px
+  - Couleur: Gradient or (#d4af37 → #e5c158)
+  - Animation: 0% → 100% en 2 secondes
+  - Effet shimmer qui traverse
+□ Texte "Loading Excellence" (pulse opacity)
+□ Pourcentage affiché: 0% → 100%
+
+ANIMATIONS:
+- brandPulse: Scale 1 ↔ 1.02, opacity 0.8 ↔ 1 (2s loop)
+- brandReveal: Width text 0% → 100% (2s)
+- loadingProgress: Width bar 0% → 100% (2s)
+- particleFloat: Particules montent du bas (3-4s staggered)
+- shimmerMove: Effet brillant traverse barre (1s loop)
+
+COMPORTEMENT:
+- Apparaît immédiatement au chargement page
+- Progression simulée (incréments aléatoires)
+- Atteint 100% quand window.load complet
+- Fade out (opacity 0) en 0.8s
+- Disparaît du DOM après transition
+
+FICHIERS:
+- HTML: <div id="pageLoader"> dans <body>
+- CSS: assets/css/loader.css
+- JS: assets/js/loader.js
+
+--------------------------------------------------------------------------------
+2. NAVIGATION (Sticky Header)
+--------------------------------------------------------------------------------
+
+DESCRIPTION:
+Barre de navigation moderne sticky qui reste en haut au scroll.
+
+POSITION: Fixed top, z-index: 1000
+
+STRUCTURE:
+┌────────────────────────────────────────────────────────────┐
+│  Motanoh & Co.    [Home] [About] [Services] [Team] [Contact] [EN/FR] ☰  │
+└────────────────────────────────────────────────────────────┘
+
+ÉLÉMENTS:
+□ Logo/Brand "Motanoh & Co." (gauche)
+  - Font: Playfair Display
+  - Couleur: Or (#d4af37)
+  - Link vers #hero
+□ Nav Links (centre/droite selon taille écran)
+  - Home, About, Services, Team, Contact
+  - Active link: soulignement or
+  - Hover: couleur or, translateX(5px)
+□ Language Toggle (droite)
+  - Switch EN/FR moderne
+  - Background slide selon langue active
+  - Border: 1px or
+□ Mobile Menu Toggle (hamburger, visible < 768px)
+  - Icon ≡ qui devient × au click
+  - Animation smooth
+
+DESIGN:
+- Background: Gradient rgba(10, 10, 10, 0.92) → rgba(26, 26, 26, 0.88)
+- Backdrop-filter: blur(20px) saturate(180%)
+- Border-bottom: 1px solid rgba(212, 175, 55, 0.15)
+- Box-shadow au scroll: 0 4px 30px rgba(0, 0, 0, 0.3)
+- Padding: 16-24px
+
+EFFETS:
+□ Glassmorphism (blur + transparency)
+□ Hover sur liens:
+  - Couleur → or
+  - Transform: translateX(5px)
+  - Glow pulse si active
+□ Ripple effect au click (cercle qui s'étend)
+□ Staggered reveal animation au chargement
+□ Navbar qui se solidifie au scroll (background plus opaque)
+
+ANIMATIONS:
+- fadeInDown au chargement (300ms)
+- Ripple au click (600ms)
+- Glow pulse sur active link (2s loop)
+- Transition smooth entre états (300ms cubic-bezier)
+
+RESPONSIVE:
+- Desktop (>1024px): Horizontal, tous liens visibles
+- Tablet (768-1024px): Compact, gap réduit
+- Mobile (<768px): Hamburger menu
+  - Menu devient vertical, full-width
+  - Slide down from top
+  - Background: rgba(10, 10, 10, 0.98) avec blur
+  - Overlay noir semi-transparent derrière
+
+FICHIERS:
+- HTML: <nav class="navbar" id="navbar">
+- CSS: assets/css/nav-effects.css
+- JS: assets/js/main.js (menu toggle, active section)
+
+--------------------------------------------------------------------------------
+3. HERO SECTION
+--------------------------------------------------------------------------------
+
+DESCRIPTION:
+Section d'accueil plein écran avec branding, slogan et éléments visuels.
+
+TAILLE: min-height: 100vh (plein écran)
+
+STRUCTURE:
+┌─────────────────────────────────────────────────────────────┐
+│                    [Particules animées]                      │
+│                  [Formes géométriques]                       │
+│                                                              │
+│                      Motanoh & Co.                           │
+│                                                              │
+│     Strategic Advisory Across the Full Business Lifecycle   │
+│                                                              │
+│  [Strategic Excellence] [Full Lifecycle] [Expert Team]      │
+│                                                              │
+│                           ↓                                  │
+└─────────────────────────────────────────────────────────────┘
+
+ÉLÉMENTS:
+
+A. ARRIÈRE-PLAN ANIMÉ (.hero-background):
+   □ Gradient noir (#0a0a0a → #1a1a1a)
+   □ Particules canvas (150 particules or):
+     - Bougent aléatoirement
+     - Connectées par lignes si distance < 150px
+     - Opacity lignes basée sur distance
+     - Couleur: rgba(212, 175, 55, ...)
+   □ Formes géométriques (3 carrés rotated 45°):
+     - Borders: 1px or transparent
+     - Animation float (mouvement ondulant 20s)
+     - Staggered delays (0s, 5s, 10s)
+   □ Effet parallax au scroll (background bouge à 50% vitesse)
+
+B. BRAND "MOTANOH & CO." (.hero-brand):
+   □ "Motanoh" - Couleur: Or (#d4af37)
+     - Font: Playfair Display, 48-96px (responsive)
+     - Text-stroke: 0.5px noir (contour)
+     - Text-shadow: Double ombre noire (profondeur)
+     - Animation textShine (ombre pulse 3s)
+   □ "&" - Couleur: Blanc (#ffffff)
+     - Font: Cormorant Garamond, italic
+     - Plus petit (40-80px)
+     - Text-stroke: 0.5px noir
+     - Text-shadow: Double ombre
+   □ "Co." - Couleur: Or clair (#e5c158)
+     - Font: Playfair Display
+     - Text-stroke: 0.5px noir
+     - Text-shadow: Double ombre
+   □ Halo pulsant derrière (::before):
+     - Radial gradient or (600x300px)
+     - Animation pulse-glow (opacity 0.35 ↔ 0.7, scale 1 ↔ 1.05)
+     - 3s loop
+
+C. TAGLINE (.brand-tagline):
+   □ Texte: "Strategic Advisory Across the Full Business Lifecycle"
+   □ Font: Cormorant Garamond, 16-24px
+   □ Couleur: Gris clair (#e0e0e0)
+   □ Style: Italic
+   □ Animation: Fade in up (600ms delay)
+
+D. HERO HIGHLIGHTS (3 cards):
+   □ 3 cartes horizontales avec icônes SVG:
+     - Strategic Excellence (icône package)
+     - Full Lifecycle Support (icône clock)
+     - Expert Team (icône users)
+   □ Design:
+     - Background: rgba(26, 26, 26, 0.7) avec blur(15px)
+     - Border: 1px or transparent
+     - Border-radius: 8px
+     - Padding: 24px
+     - Min-width: 180px
+   □ Hover:
+     - Border → or plein
+     - TranslateY(-5px)
+     - Box-shadow or
+     - Icon rotation 360°
+   □ Responsive:
+     - Desktop: 3 colonnes horizontal
+     - Tablet: 3 colonnes compact
+     - Mobile: 1 colonne vertical (stack)
+
+E. SCROLL INDICATOR:
+   □ Flèche ↓ dorée
+   □ Position: Bas du hero
+   □ Animation bounce (monte/descend)
+   □ Hover: Scale 1.2
+   □ Link: Scroll smooth vers #about
+
+ANIMATIONS AU CHARGEMENT:
+1. Brand parts (staggered):
+   - "Motanoh" apparaît à 100ms (fade-in-up)
+   - "&" apparaît à 250ms
+   - "Co." apparaît à 400ms
+2. Tagline apparaît à 600ms
+3. Highlights apparaissent à 900ms
+4. Scroll indicator apparaît à 1200ms
+
+EFFETS PREMIUM:
+□ Grain texture overlay (film effect)
+□ Cursor glow suit la souris (radial gradient or)
+□ Parallax scroll sur background
+□ Particules connectées dynamiques
+□ Glassmorphism sur highlights
+
+FICHIERS:
+- HTML: <section id="hero" class="hero">
+- CSS: assets/css/styles.css (hero styles)
+- JS: assets/js/animations.js (particles, hero reveal)
+- JS: assets/js/premium-effects.js (parallax, cursor)
+
+--------------------------------------------------------------------------------
+4. ABOUT SECTION
+--------------------------------------------------------------------------------
+
+DESCRIPTION:
+Section de présentation de l'entreprise.
+
+BACKGROUND: Noir secondaire (#1a1a1a)
+
+STRUCTURE:
+┌─────────────────────────────────────────────────────────────┐
+│                 Excellence in Strategic Advisory             │
+│                           ────                               │
+│                                                              │
+│   Motanoh & Co. is a premier strategic advisory firm...     │
+│                                                              │
+│   Our approach combines deep market expertise...            │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+
+ÉLÉMENTS:
+□ Section Header:
+  - Titre H2: "Excellence in Strategic Advisory"
+  - Font: Playfair Display, 40px
+  - Couleur: Or (#d4af37)
+  - Divider: Ligne or de 60px en dessous
+□ Content Container:
+  - Max-width: 900px, centré
+  - 2 paragraphes de description
+  - Font: Lato, 18px
+  - Line-height: 1.8
+  - Couleur: Gris clair (#e0e0e0)
+  - Text-align: center
+□ Background glassmorphism (::before):
+  - Rectangle 120% width derrière texte
+  - Background: rgba(26, 26, 26, 0.4) blur(10px)
+  - Border: 1px or transparent
+  - Border-radius: 16px
+
+ANIMATIONS:
+- Fade in up au scroll (Intersection Observer)
+- Shimmer effect sur titre (barre lumineuse qui traverse)
+
+CONTENU:
+EN: "Motanoh & Co. is a premier strategic advisory firm based in
+     Côte d'Ivoire, dedicated to partnering with businesses..."
+FR: "Motanoh & Co. est un cabinet de conseil stratégique de premier
+     plan basé en Côte d'Ivoire, dédié à accompagner..."
+
+FICHIERS:
+- HTML: <section id="about" class="section about-section">
+- CSS: assets/css/styles.css + premium-effects.css
+- JS: assets/js/language.js (traductions)
+
+--------------------------------------------------------------------------------
+5. SERVICES SECTION
+--------------------------------------------------------------------------------
+
+DESCRIPTION:
+Grille de 5 services offerts.
+
+BACKGROUND: Noir principal (#0a0a0a)
+
+STRUCTURE:
+┌─────────────────────────────────────────────────────────────┐
+│                        Our Services                          │
+│                           ────                               │
+│                                                              │
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐                     │
+│  │Service 1│  │Service 2│  │Service 3│                     │
+│  └─────────┘  └─────────┘  └─────────┘                     │
+│                                                              │
+│       ┌─────────┐    ┌─────────┐                           │
+│       │Service 4│    │Service 5│                           │
+│       └─────────┘    └─────────┘                           │
+└─────────────────────────────────────────────────────────────┘
+
+ÉLÉMENTS:
+□ Section Header (identique About)
+□ Services Grid:
+  - Display: Grid
+  - Desktop: 3 colonnes
+  - Tablet: 2 colonnes
+  - Mobile: 1 colonne
+  - Gap: 32px
+  - 5 service cards total
+
+SERVICE CARD DESIGN:
+□ Background: linear-gradient rgba(26, 26, 26, 0.7 → 0.5)
+□ Backdrop-filter: blur(20px) saturate(180%)
+□ Border: 1px solid rgba(212, 175, 55, 0.15)
+□ Border-radius: 4px
+□ Padding: 48px 32px
+□ Box-shadow: Double (noir + or transparent)
+□ Inset highlight: 1px blanc transparent top
+□ Transition: 300ms cubic-bezier
+
+HOVER EFFECTS:
+□ Transform: translateY(-8px)
+□ Background: Gradient plus opaque
+□ Border: Or plus visible (0.4)
+□ Box-shadow: Or brillant (0.2)
+□ Shimmer effect (barre qui traverse ::before)
+
+CONTENU PAR CARTE:
+□ Titre H3: Nom du service
+  - Font: Playfair Display, 24px
+  - Couleur: Or
+  - Margin-bottom: 16px
+□ Description:
+  - Font: Lato, 16px
+  - Couleur: Gris (#ccc)
+  - Line-height: 1.7
+
+LES 5 SERVICES:
+1. Strategic Planning & Market Entry
+2. Growth & Development
+3. Operational Excellence
+4. Financial Advisory
+5. Transition & Exit Planning
+
+LAYOUT SPÉCIFIQUE DESKTOP:
+- Row 1: 3 cartes (Services 1, 2, 3)
+- Row 2: 2 cartes centrées (Services 4, 5)
+  - Service 4: Grid column 1/2, margin-left auto
+  - Service 5: Grid column 3/4, margin-right auto
+
+ANIMATIONS:
+- Staggered reveal au scroll (delay 0.1s par carte)
+- Hover shimmer (shimmer traverse de gauche à droite)
+- Border glow rotation (si hover prolongé)
+
+FICHIERS:
+- HTML: <section id="services" class="section services-section">
+- CSS: assets/css/styles.css + premium-effects.css
+- JS: assets/js/animations.js (stagger), language.js (contenu)
+
+--------------------------------------------------------------------------------
+6. TEAM SECTION
+--------------------------------------------------------------------------------
+
+DESCRIPTION:
+Présentation de l'équipe (actuellement 1 membre).
+
+BACKGROUND: Noir secondaire (#1a1a1a)
+
+STRUCTURE:
+┌─────────────────────────────────────────────────────────────┐
+│                         Our Team                             │
+│                           ────                               │
+│                                                              │
+│                  ┌─────────────────────┐                    │
+│                  │   Henri-Joel O.     │                    │
+│                  │   Associate, BD     │                    │
+│                  │   [Bio text...]     │                    │
+│                  │   [LinkedIn icon]   │                    │
+│                  └─────────────────────┘                    │
+└─────────────────────────────────────────────────────────────┘
+
+ÉLÉMENTS:
+□ Section Header (identique précédentes)
+□ Team Grid:
+  - Display: Grid
+  - Desktop: auto-fit, minmax(350px, 1fr), max-width 1000px
+  - Centré
+  - Gap: 48px
+
+TEAM MEMBER CARD:
+□ Background: linear-gradient rgba(26, 26, 26, 0.75 → 0.55)
+□ Backdrop-filter: blur(20px) saturate(180%)
+□ Border: 1px or transparent
+□ Border-radius: 4px
+□ Padding: 48px
+□ Text-align: center
+□ Transition: all 300ms
+
+HOVER:
+□ Background plus opaque
+□ Border or visible
+□ Box-shadow or
+□ Transform: translateY légère (pas de tilt 3D sur team)
+
+CONTENU:
+□ Nom (H3):
+  - "Henri-Joel Otokore"
+  - Font: Playfair Display, 28px
+  - Couleur: Or
+□ Titre:
+  - EN: "Associate, Business Development"
+  - FR: "Associé, Chargé du Développement"
+  - Font: Lato, 16px, italic
+  - Couleur: Gris
+□ Bio (Paragraphe):
+  - Texte descriptif (~100 mots)
+  - Font: Lato, 16px
+  - Line-height: 1.7
+  - Couleur: Gris clair
+□ LinkedIn Link:
+  - Icône SVG LinkedIn
+  - Couleur: Or
+  - Hover: Scale 1.1, glow
+  - Link: https://linkedin.com/in/henri-joel-otokore
+
+ANIMATIONS:
+- Fade in up au scroll
+- Smooth transitions hover
+
+EXTENSIBILITÉ:
+Grid s'adapte automatiquement si plus de membres ajoutés.
+
+FICHIERS:
+- HTML: <section id="team" class="section team-section">
+- CSS: assets/css/styles.css + premium-effects.css
+- JS: assets/js/language.js (bio traduite)
+
+--------------------------------------------------------------------------------
+7. FOOTER / CONTACT SECTION
+--------------------------------------------------------------------------------
+
+DESCRIPTION:
+Footer premium 4 colonnes avec wave divider, fusionné avec section Contact.
+
+BACKGROUND: Gradient (#0a0a0a → #1a1a1a)
+ID: #contact (pour navigation)
+
+STRUCTURE:
+┌─────────────────────────────────────────────────────────────┐
+│                      ~~~~~~~~ (Wave)                         │
+│                                                              │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
+│  │  Brand   │  │  Links   │  │ Contact  │  │ Connect  │   │
+│  │  & Desc  │  │  Quick   │  │   Info   │  │   +CTA   │   │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
+│                                                              │
+│  ───────────────────────────────────────────────────────   │
+│                                                              │
+│  © 2026 Motanoh & Co. | Privacy | Terms  [Premium Badge]   │
+└─────────────────────────────────────────────────────────────┘
+
+ÉLÉMENTS:
+
+A. WAVE DIVIDER:
+   □ SVG wave en haut du footer
+   □ Couleur: Noir secondaire (#1a1a1a)
+   □ Transform: rotate(180deg)
+   □ Height: 80px desktop, 60px tablet, 50px mobile
+
+B. FOOTER MAIN (Grid 4 colonnes):
+
+   COLONNE 1 - BRAND:
+   □ Logo "M & Co." stylisé
+     - "M" grand (3rem) or
+     - "& Co." petit (1.5rem) or clair
+   □ Tagline italic
+   □ Description (2-3 lignes)
+
+   COLONNE 2 - QUICK LINKS:
+   □ Titre "Quick Links"
+   □ Liste liens:
+     - Home, About, Services, Team, Contact
+   □ Hover: Arrow → apparaît, translateX(5px)
+
+   COLONNE 3 - CONTACT:
+   □ Titre "Contact"
+   □ Icônes + info:
+     - Phone: (+225) 07 57 368 526
+     - Email: henrijoel.o@motanoh-co.com
+     - Location: Côte d'Ivoire
+   □ Hover sur ligne: translateX(5px), icon scale
+
+   COLONNE 4 - CONNECT + CTA:
+   □ Titre "Connect"
+   □ LinkedIn social link
+   □ CTA Card:
+     - Background: rgba(26, 26, 26, 0.6)
+     - Border: 1px or transparent
+     - Border-radius: 12px
+     - Padding: 24px
+   □ CTA Text: "Let's discuss your strategic needs"
+   □ CTA Button: "Get in Touch"
+     - Gradient or background
+     - Shimmer effect (::before)
+     - Hover: translateY(-2px), scale(1.05)
+     - Ouvre modal formulaire contact
+
+C. FOOTER BOTTOM:
+   □ Border-top: 1px or transparent
+   □ Padding: 24px 0
+   □ Flex space-between
+   □ Copyright: "© 2026 Motanoh & Co. All rights reserved."
+   □ Links: Privacy Policy | Terms of Service
+   □ Badge: "Premium Advisory Services"
+     - Background: or transparent
+     - Border: 1px or
+     - Border-radius: 20px
+     - Icon étoile qui rotate (20s loop)
+
+D. BACKGROUND PATTERN:
+   □ Radial gradients or subtils (::before)
+   □ Position: 20% 50% et 80% 80%
+   □ Opacity: 0.03 (très subtil)
+
+RESPONSIVE:
+- Desktop (1025px+): 4 colonnes (2fr 1fr 1fr 1.5fr)
+- Tablet (768-1024px): 2 colonnes, brand full-width top
+- Mobile (<768px): 1 colonne, tout empilé, centré
+
+ANIMATIONS:
+- Colonnes fade in up avec stagger (0.1s, 0.2s, 0.3s, 0.4s)
+- Hover glow sur titre
+- CTA button shimmer
+- Badge star rotation
+
+FICHIERS:
+- HTML: <footer id="contact" class="footer">
+- CSS: assets/css/footer-2026.css
+- JS: assets/js/contact-form.js (CTA button ouvre modal)
+
+
+================================================================================
+V. FONCTIONNALITÉS INTERACTIVES
+================================================================================
+
+--------------------------------------------------------------------------------
+1. SYSTÈME DE NAVIGATION
+--------------------------------------------------------------------------------
+
+FONCTIONNALITÉ: Navigation avec smooth scroll et section highlighting
+
+COMPORTEMENT:
+□ Click sur lien nav → Smooth scroll vers section
+  - Offset: Hauteur navbar (72px) + 20px padding
+  - Duration: Calculée selon distance
+  - Easing: ease-in-out
+□ Au scroll de la page:
+  - Section actuellement visible = link nav "active"
+  - Active link: soulignement or, glow pulse
+□ Mobile menu toggle:
+  - Click hamburger → Menu slide down
+  - Background overlay semi-transparent
+  - Body scroll disabled quand menu ouvert
+  - Click link → Menu se ferme + scroll
+
+IMPLÉMENTATION:
+- Event listeners sur tous <a href="#section">
+- preventDefault() + scrollTo() custom
+- Intersection Observer pour détecter section visible
+- classList.add/remove('active') sur links
+
+CODE CLÉS:
+- main.js: handleNavigation(), handleScroll()
+- nav-effects.css: .nav-link.active styles
+
+--------------------------------------------------------------------------------
+2. SYSTÈME BILINGUE (EN/FR)
+--------------------------------------------------------------------------------
+
+FONCTIONNALITÉ: Toggle entre Anglais et Français
+
+STRUCTURE DE DONNÉES:
+const translations = {
+  en: {
+    'nav-home': 'Home',
+    'nav-about': 'About',
+    // ... tous les textes EN
+  },
+  fr: {
+    'nav-home': 'Accueil',
+    'nav-about': 'À Propos',
+    // ... tous les textes FR
+  }
+}
+
+ÉLÉMENTS HTML:
+Tous textes traduisibles ont: data-lang-key="key-name"
+Exemple: <h2 data-lang-key="about-title">Excellence in Strategic Advisory</h2>
+
+COMPORTEMENT:
+□ Click sur EN ou FR dans toggle
+□ Fonction setLanguage(lang) appelée:
+  1. Update currentLang = 'en' ou 'fr'
+  2. Save dans localStorage ('motanoh-language')
+  3. Update <html lang="...">
+  4. Update meta description
+  5. querySelectorAll('[data-lang-key]')
+  6. Pour chaque élément: textContent = translations[lang][key]
+  7. Update toggle UI (active class)
+  8. Announce changement aux screen readers
+□ Au chargement page:
+  - Lit localStorage ou défaut 'en'
+  - Apply langue sauvegardée
+
+LANGUAGE TOGGLE UI:
+- Design: Switch moderne avec background qui slide
+- EN actif: Background left
+- FR actif: Background right (classe .fr-active)
+- Transition smooth: 300ms
+
+TRADUCTIONS COMPLÈTES:
+- Navigation (5 items)
+- Hero (tagline + 3 highlights)
+- About (titre + 2 paragraphes)
+- Services (titre + 5 services x2 champs)
+- Team (titre + titre membre + bio)
+- Contact/Footer (tous textes)
+- Formulaire modal (labels + erreurs + succès)
+
+TOTAL: ~50 clés de traduction
+
+FICHIERS:
+- assets/js/language.js (système complet)
+- index.html (data-lang-key sur éléments)
+
+--------------------------------------------------------------------------------
+3. FORMULAIRE DE CONTACT MODAL
+--------------------------------------------------------------------------------
+
+FONCTIONNALITÉ: Pop-up formulaire avec validation
+
+DÉCLENCHEMENT:
+□ Click sur bouton CTA "Get in Touch" (footer, navbar)
+□ Click sur lien "Contact" peut aussi déclencher
+
+MODAL OVERLAY:
+□ Fixed full-screen
+□ Background: rgba(0, 0, 0, 0.85) + blur(10px)
+□ Z-index: 10000
+□ Transition: Fade in (opacity 0 → 1)
+
+MODAL CONTAINER:
+□ Max-width: 600px
+□ Background: Gradient noir glass avec blur(20px)
+□ Border: 1px or transparent
+□ Border-radius: 16px
+□ Box-shadow: Triple (noir + or + inset)
+□ Transform au open: scale(0.9) translateY(30px) → scale(1) translateY(0)
+□ Scrollable si contenu dépasse
+
+HEADER:
+□ Titre: "Get in Touch" / "Contactez-nous"
+□ Sous-titre: "Let's discuss your strategic needs"
+□ Close button (X):
+  - Position: absolute top-right
+  - Icône SVG croix
+  - Hover: rotate(90deg), couleur or
+
+FORMULAIRE FIELDS:
+
+1. NAME (requis):
+   - Input text
+   - Icon: User SVG
+   - Validation: Min 2 caractères
+   - Error: "Please enter your name"
+
+2. EMAIL (requis):
+   - Input email
+   - Icon: Envelope SVG
+   - Validation: Regex email
+   - Error: "Please enter a valid email"
+
+3. PHONE (optionnel):
+   - Input tel
+   - Icon: Phone SVG
+   - Pas de validation stricte
+
+4. SUBJECT (requis):
+   - Input text
+   - Icon: Edit SVG
+   - Validation: Min 2 caractères
+   - Error: "Please enter a subject"
+
+5. MESSAGE (requis):
+   - Textarea
+   - Min-height: 150px
+   - Resize: vertical
+   - Validation: Min 10 caractères
+   - Error: "Please enter your message"
+
+DESIGN INPUTS:
+□ Background: rgba(10, 10, 10, 0.6)
+□ Border: 1px or transparent (0.2)
+□ Border-radius: 8px
+□ Padding: 16px (avec icon: 16px left + 30px icon)
+□ Color: Blanc
+□ Font: Lato, 16px
+□ Focus:
+  - Border: Or plein (0.4)
+  - Box-shadow: 0 0 0 3px rgba(or, 0.1)
+  - Icon opacity 1
+
+ÉTATS VALIDATION:
+□ Default: Border or transparent
+□ Focus: Border or visible
+□ Error: Border rouge (#e74c3c)
+  - Message erreur affiché dessous
+  - Shake animation
+□ Success: Border vert (#2ecc71)
+  - Checkmark animé
+
+SUBMIT BUTTON:
+□ Text: "Send Message" / "Envoyer le Message"
+□ Background: Gradient or
+□ Full-width
+□ Padding: 16px 32px
+□ Border-radius: 8px
+□ Box-shadow: Or glow
+□ Hover:
+  - TranslateY(-2px)
+  - Shimmer effect (::before glisse)
+  - Box-shadow plus intense
+□ Loading state:
+  - Disabled
+  - Text opacity 0
+  - Spinner animation (::after)
+□ Icon flèche droite qui translateX(5px) au hover
+
+COMPORTEMENT SOUMISSION:
+1. Validation de tous champs requis
+2. Si erreur: Focus premier champ erreur + scroll to view
+3. Si valide:
+   - Bouton → loading state
+   - Collecte formData {}
+   - Simulation envoi 2 secondes (TODO: remplacer par vraie API)
+   - Success:
+     * Formulaire caché
+     * Message succès affiché:
+       - Icon checkmark vert
+       - "Message Sent!"
+       - "Thank you for contacting us..."
+     * Modal ferme après 3 secondes
+   - Error (si échec):
+     * Alert message
+     * Bouton retour à normal
+
+FERMETURE MODAL:
+□ Click bouton X
+□ Click sur overlay (background)
+□ Touche Escape
+□ Après succès (auto 3s)
+□ Animation: Fade out + scale down
+□ Reset formulaire après fermeture complète
+
+ACCESSIBILITÉ:
+□ role="dialog", aria-modal="true"
+□ aria-labelledby sur titre
+□ Focus trap (Tab cycle dans modal)
+□ Shift+Tab reverse
+□ Escape ferme
+□ Focus sur premier input à l'ouverture
+□ Screen reader announce fermeture
+
+INTÉGRATIONS EMAIL (Commentées, à configurer):
+- EmailJS (gratuit 200/mois)
+- Formspree (gratuit 50/mois)
+- Custom backend (Node.js + Nodemailer)
+
+FICHIERS:
+- HTML: <div id="contactModal" class="contact-modal-overlay">
+- CSS: assets/css/contact-form.css
+- JS: assets/js/contact-form.js
+
+--------------------------------------------------------------------------------
+4. BOUTON BACK TO TOP
+--------------------------------------------------------------------------------
+
+FONCTIONNALITÉ: Bouton flottant pour retour en haut de page
+
+POSITION:
+- Fixed bottom-right
+- Bottom: 30px, Right: 30px
+- Z-index: 999
+- Mobile: Bottom 20px, Right 20px
+
+DESIGN:
+□ Cercle 56x56px (mobile: 48x48)
+□ Background: Gradient or (#d4af37 → #e5c158)
+□ Border: 2px transparent
+□ Border-radius: 50%
+□ Box-shadow: Or glow
+□ Icon: Flèche ↑ SVG (24x24)
+□ Color icon: Noir
+
+ÉTATS:
+□ Hidden par défaut:
+  - Opacity: 0
+  - Visibility: hidden
+  - Transform: translateY(100px) scale(0.5)
+□ Visible (classe .visible):
+  - Apparaît après scroll > 400px
+  - Opacity: 1
+  - Visibility: visible
+  - Transform: translateY(0) scale(1)
+  - Transition: 400ms cubic-bezier
+□ Hover:
+  - TranslateY(-8px)
+  - Scale(1.05)
+  - Box-shadow plus intense
+  - Border: rgba(blanc, 0.3)
+  - Icon: translateY(-3px)
+  - Gradient overlay (::before) visible
+□ Active (click):
+  - Scale légèrement réduit
+  - Animation ripple
+
+CERCLE DE PROGRESSION (::after):
+□ Visible en scrolling (classe .scrolling)
+□ Border-top: 2px or clair
+□ Rotation animation (1s loop)
+□ Indique activité
+
+COMPORTEMENT:
+□ Au scroll > 400px: Apparaît
+□ Au scroll < 400px: Disparaît
+□ Click:
+  - Smooth scroll to top
+  - Animation scale pulse sur button
+□ Keyboard accessible (Enter/Space)
+
+ANIMATIONS:
+- Apparition: slideUp + scale (400ms)
+- Disparition: slideDown + scale (400ms)
+- Hover: translateY + glow
+- Progress circle: rotate (1s loop)
+
+FICHIERS:
+- HTML: <button class="back-to-top" id="backToTop">
+- CSS: assets/css/footer-2026.css
+- JS: assets/js/loader.js (gestion show/hide + click)
+
+--------------------------------------------------------------------------------
+5. SCROLL PROGRESS BAR
+--------------------------------------------------------------------------------
+
+FONCTIONNALITÉ: Barre horizontale montrant progression lecture
+
+POSITION:
+- Fixed top: 0
+- Full-width
+- Height: 3px
+- Z-index: 10000 (au-dessus de tout)
+
+DESIGN:
+□ Background: Gradient or (#d4af37 → #e5c158)
+□ Box-shadow: Or glow (0 0 10px)
+□ Width: 0% à 100% selon scroll
+□ Transition: Width 100ms ease (smooth mais réactif)
+
+COMPORTEMENT:
+□ Calcul:
+  - scrollTop = position actuelle
+  - scrollHeight = hauteur totale - viewport
+  - percentage = (scrollTop / scrollHeight) * 100
+□ Update en temps réel au scroll
+□ Largeur = percentage + '%'
+
+EXEMPLE:
+- En haut de page: width: 0%
+- Milieu de page: width: 50%
+- Bas de page: width: 100%
+
+FICHIERS:
+- HTML: <div id="scrollProgress"></div>
+- CSS: assets/css/premium-effects.css
+- JS: assets/js/premium-effects.js
+
+--------------------------------------------------------------------------------
+6. MOBILE MENU TOGGLE
+--------------------------------------------------------------------------------
+
+FONCTIONNALITÉ: Menu hamburger responsive
+
+DÉCLENCHEMENT:
+Visible uniquement < 768px (mobile/tablet portrait)
+
+BOUTON HAMBURGER:
+□ Position: Top-right navbar
+□ Icon: 3 barres horizontales (≡)
+□ Click: Transform → X (croix)
+□ Animation: Rotate + translate barres
+□ Couleur: Or
+
+MENU DÉROULANT:
+□ Position: Fixed, top: 72px (sous navbar)
+□ Full-width
+□ Background: rgba(10, 10, 10, 0.98) + blur(10px)
+□ Border-bottom: 1px or transparent
+□ Transform initial: translateY(-100%)
+□ Opacity: 0
+□ Pointer-events: none
+
+ÉTAT OUVERT (classe .active):
+□ Transform: translateY(0)
+□ Opacity: 1
+□ Pointer-events: all
+□ Transition: 300ms ease
+
+CONTENU:
+□ Links empilés verticalement
+□ Text-align: center
+□ Padding: 16px par link
+□ Font-size: 18px
+□ Gap: 16px entre links
+□ Language toggle centré en bas
+
+COMPORTEMENT:
+□ Click hamburger → Toggle .active
+□ Click link → Ferme menu + scroll to section
+□ Click outside → Ferme menu
+□ Body scroll locked quand ouvert
+
+ANIMATIONS:
+- Menu: Slide down/up
+- Links: Pas d'animation stagger (disabled pour perf mobile)
+
+FICHIERS:
+- HTML: <button class="mobile-menu-toggle">
+- CSS: assets/css/responsive.css
+- JS: assets/js/main.js
+
+
+================================================================================
+VI. EFFETS VISUELS PREMIUM
+================================================================================
+
+--------------------------------------------------------------------------------
+1. GLASSMORPHISM
+--------------------------------------------------------------------------------
+
+DESCRIPTION:
+Effet de verre dépoli avec transparence et flou.
+
+ÉLÉMENTS CONCERNÉS:
+□ Navbar
+□ Service cards
+□ Team cards
+□ Hero highlights
+□ Footer CTA card
+□ Contact modal
+□ About content background
+
+RECETTE TECHNIQUE:
+background: linear-gradient(
+  135deg,
+  rgba(26, 26, 26, 0.7) 0%,
+  rgba(26, 26, 26, 0.5) 100%
+);
+backdrop-filter: blur(20px) saturate(180%);
+-webkit-backdrop-filter: blur(20px) saturate(180%);
+border: 1px solid rgba(212, 175, 55, 0.15);
+box-shadow:
+  0 8px 32px rgba(0, 0, 0, 0.3),
+  inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+VARIATIONS:
+- Light glass: opacity 0.5-0.6, blur 10-15px
+- Strong glass: opacity 0.7-0.8, blur 20-25px
+- Saturate: 150-180% (renforce couleurs derrière)
+
+HOVER ENHANCEMENT:
+- Background plus opaque
+- Border or plus visible
+- Box-shadow or glow
+- Inset highlight blanc plus visible
+
+RESPONSIVE:
+- Desktop: Full effect (blur 20px)
+- Tablet: Réduit (blur 15px)
+- Mobile: Minimal (blur 10px) pour performance
+
+--------------------------------------------------------------------------------
+2. GRAIN TEXTURE (FILM EFFECT)
+--------------------------------------------------------------------------------
+
+DESCRIPTION:
+Overlay de grain subtil sur toute la page pour effet cinématographique.
+
+IMPLÉMENTATION:
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url('data:image/svg+xml...');
+  /* SVG avec feTurbulence fractal noise */
+  opacity: 0.015;
+  pointer-events: none;
+  z-index: 9999;
+  animation: grain 8s steps(10) infinite;
+}
+
+ANIMATION:
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  /* etc. - mouvement aléatoire du grain */
+}
+
+PARAMÈTRES:
+- baseFrequency: 0.9 (finesse grain)
+- numOctaves: 4 (complexité)
+- Opacity: 0.015 (très subtil)
+- Animation: 8s steps(10) (mouvement saccadé type film)
+
+RESPONSIVE:
+- Desktop: Opacity 0.015
+- Mobile: Opacity 0.01 (encore plus discret)
+
+DÉSACTIVATION:
+Si prefers-reduced-motion, animation: none
+
+--------------------------------------------------------------------------------
+3. CURSOR GLOW (LUEUR INTERACTIVE)
+--------------------------------------------------------------------------------
+
+DESCRIPTION:
+Gradient radial doré qui suit le curseur de la souris.
+
+ÉLÉMENT:
+<div id="cursorGlow"></div>
+
+STYLE:
+position: fixed;
+width: 500px; height: 500px;
+border-radius: 50%;
+background: radial-gradient(
+  circle,
+  rgba(212, 175, 55, 0.15) 0%,
+  rgba(212, 175, 55, 0.05) 25%,
+  transparent 70%
+);
+pointer-events: none;
+transform: translate(-50%, -50%);
+z-index: 9998;
+opacity: 0; /* Invisible par défaut */
+mix-blend-mode: screen; /* Effet de lumière */
+
+COMPORTEMENT:
+□ Suit la souris avec smooth easing:
+  - Position souris stockée: mouseX, mouseY
+  - Position actuelle: currentX, currentY
+  - Chaque frame: currentX += (mouseX - currentX) * 0.15
+  - RequestAnimationFrame loop
+  - Lag intentionnel (ease: 0.15) pour effet fluide
+□ Opacité 0 par défaut
+□ Opacité 1 quand souris sur body
+□ Enhanced glow au hover sur cards:
+  - Background gradient plus intense
+  - rgba(212, 175, 55, 0.25) au centre
+
+RESPONSIVE:
+- Desktop: Active, 500x500px
+- Tablet: Réduit, 300x300px
+- Mobile: Désactivé (display: none)
+
+DÉSACTIVATION:
+□ prefers-reduced-motion
+□ Touch devices (hover: none)
+
+--------------------------------------------------------------------------------
+4. TILT 3D SUR CARDS
+--------------------------------------------------------------------------------
+
+DESCRIPTION:
+Cards qui s'inclinent selon position de la souris (effet 3D).
+
+ÉLÉMENTS:
+- Service cards
+- Team cards
+- Highlight items
+
+IMPLÉMENTATION:
+□ Event listener mousemove sur card
+□ Calcul position souris relative à card:
+  - rect = card.getBoundingClientRect()
+  - x = e.clientX - rect.left
+  - y = e.clientY - rect.top
+  - centerX = rect.width / 2
+  - centerY = rect.height / 2
+□ Calcul rotation:
+  - rotateX = ((y - centerY) / centerY) * -5 (max ±5deg)
+  - rotateY = ((x - centerX) / centerX) * 5
+□ Application transform:
+  card.style.transform = `
+    perspective(1000px)
+    rotateX(${rotateX}deg)
+    rotateY(${rotateY}deg)
+    translateY(-8px)
+    scale(1.02)
+  `;
+□ MouseLeave: Reset transform à vide
+
+RÉSULTAT:
+Card "suit" le curseur avec inclinaison 3D subtile.
+
+DÉSACTIVATION:
+□ Touch devices (pas de mousemove précis)
+□ Mobile (performance)
+
+--------------------------------------------------------------------------------
+5. PARALLAX SCROLLING
+--------------------------------------------------------------------------------
+
+DESCRIPTION:
+Éléments en arrière-plan qui bougent à vitesse différente du scroll.
+
+ÉLÉMENTS:
+□ Hero background (.hero-background)
+  - Bouge à 50% vitesse scroll
+  - TranslateY(scrolled * 0.5)
+□ Geometric shapes (.shape)
+  - Chaque shape bouge à vitesse différente
+  - Speed = 0.3 + (index * 0.1)
+  - TranslateY + rotation
+
+IMPLÉMENTATION:
+function parallaxEffect() {
+  const scrolled = window.pageYOffset;
+  heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
+  shapes.forEach((shape, i) => {
+    const speed = 0.3 + (i * 0.1);
+    shape.style.transform = `translateY(${scrolled * speed}px) rotate(45deg)`;
+  });
+}
+
+window.addEventListener('scroll', () => {
+  requestAnimationFrame(parallaxEffect);
+});
+
+EFFET:
+Impression de profondeur, éléments à différentes "distances".
+
+--------------------------------------------------------------------------------
+6. SHIMMER / SHINE EFFECTS
+--------------------------------------------------------------------------------
+
+DESCRIPTION:
+Effet de lumière qui traverse un élément.
+
+USAGES:
+□ Service cards au hover
+□ CTA button au hover
+□ Section titles
+□ Loading bar
+
+TECHNIQUE:
+::before pseudo-element avec gradient qui translate.
+
+EXEMPLE (Service Card):
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+.service-card:hover::before {
+  left: 100%;
+}
+
+RÉSULTAT:
+Barre lumineuse glisse de gauche à droite au hover.
+
+VARIATION (Section Title):
+Animation continue (loop):
+@keyframes shimmer {
+  0% { left: -100%; }
+  50%, 100% { left: 200%; }
+}
+::after { animation: shimmer 3s infinite; }
+
+--------------------------------------------------------------------------------
+7. ANIMATED BORDERS
+--------------------------------------------------------------------------------
+
+DESCRIPTION:
+Bordures qui tournent autour d'un élément.
+
+ÉLÉMENTS:
+Service cards et team cards (au hover prolongé)
+
+TECHNIQUE:
+::after pseudo-element avec gradient qui rotate.
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px;
+  right: -1px; bottom: -1px;
+  background: linear-gradient(
+    45deg,
+    rgba(212, 175, 55, 0) 0%,
+    rgba(212, 175, 55, 0.3) 50%,
+    rgba(212, 175, 55, 0) 100%
+  );
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.card:hover::after {
+  opacity: 1;
+  animation: borderRotate 3s linear infinite;
+}
+
+@keyframes borderRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+RÉSULTAT:
+Halo doré qui tourne autour de la carte.
+
+--------------------------------------------------------------------------------
+8. RIPPLE EFFECT (ONDULATION)
+--------------------------------------------------------------------------------
+
+DESCRIPTION:
+Cercle qui s'étend au click sur boutons/links.
+
+IMPLÉMENTATION:
+□ Event listener click sur éléments
+□ Création span.ripple-effect
+□ Position: Coordonnées du click
+□ Animation: Scale 0 → grand, opacity 1 → 0
+□ Suppression après animation (600ms)
+
+CSS:
+.ripple-effect {
+  position: absolute;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.5);
+  transform: translate(-50%, -50%);
+  animation: ripple-animation 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  0% { width: 20px; height: 20px; opacity: 1; }
+  100% { width: 200px; height: 200px; opacity: 0; }
+}
+
+RÉSULTAT:
+Feedback visuel satisfaisant au click.
+
+
+================================================================================
+VII. ANIMATIONS
+================================================================================
+
+--------------------------------------------------------------------------------
+TYPES D'ANIMATIONS
+--------------------------------------------------------------------------------
+
+1. KEYFRAME ANIMATIONS (CSS @keyframes)
+2. TRANSITION ANIMATIONS (CSS transition)
+3. JAVASCRIPT ANIMATIONS (RequestAnimationFrame)
+4. SCROLL-TRIGGERED ANIMATIONS (Intersection Observer)
+
+--------------------------------------------------------------------------------
+1. LOADING SCREEN ANIMATIONS
+--------------------------------------------------------------------------------
+
+A. BRAND PULSE:
+@keyframes brandPulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+Duration: 2s
+Iteration: infinite
+Target: .loader-brand-text
+
+B. BRAND REVEAL:
+@keyframes brandReveal {
+  0%, 100% { width: 0; }
+  50% { width: 100%; }
+}
+Duration: 2s
+Iteration: infinite
+Target: .loader-brand-text::before
+
+C. LOADING PROGRESS:
+@keyframes loadingProgress {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+Duration: 2s
+Iteration: 1 (forwards)
+Target: .loader-bar
+
+D. LOADING SHINE:
+@keyframes loadingShine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+Duration: 1.5s
+Iteration: infinite
+Target: .loader-bar (background-size: 200%)
+
+E. SHIMMER MOVE:
+@keyframes shimmerMove {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+Duration: 1s
+Iteration: infinite
+Target: .loader-bar::after
+
+F. PARTICLE FLOAT:
+@keyframes particleFloat {
+  0% { bottom: 0; opacity: 0; }
+  50% { opacity: 1; }
+  100% { bottom: 100%; opacity: 0; }
+}
+Duration: 3-4s (varie par particule)
+Iteration: infinite
+Target: .loader-particle
+
+G. SPIN (Spinner):
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+Duration: 1s
+Iteration: infinite linear
+Target: .loader-spinner
+
+--------------------------------------------------------------------------------
+2. HERO ANIMATIONS
+--------------------------------------------------------------------------------
+
+A. TEXT SHINE (Brand "Motanoh"):
+@keyframes textShine {
+  0%, 100% {
+    text-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.6),
+      0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    text-shadow:
+      0 3px 6px rgba(0, 0, 0, 0.7),
+      0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+}
+Duration: 3s
+Iteration: infinite ease-in-out
+Target: .brand-motanoh
+
+EFFET: Ombre portée pulse légèrement.
+
+B. PULSE GLOW (Halo derrière brand):
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+Duration: 3s
+Iteration: infinite ease-in-out
+Target: .hero-brand::before
+
+EFFET: Halo doré pulse et grandit.
+
+C. FLOAT (Formes géométriques):
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(45deg); }
+  25% { transform: translate(30px, -30px) rotate(50deg); }
+  50% { transform: translate(0, -50px) rotate(55deg); }
+  75% { transform: translate(-30px, -20px) rotate(40deg); }
+}
+Duration: 20s
+Iteration: infinite ease-in-out
+Delays: 0s, 5s, 10s (staggered)
+Target: .shape
+
+EFFET: Formes flottent de manière ondulante.
+
+D. BOUNCE (Scroll indicator):
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+Duration: 2s
+Iteration: infinite
+Target: .scroll-indicator
+
+EFFET: Flèche bounce de haut en bas.
+
+E. FADE IN UP (Brand parts reveal):
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+Duration: 0.8s
+Iteration: 1 forwards
+Delays: Staggered (0.1s, 0.25s, 0.4s, 0.6s, 0.9s, 1.2s)
+Targets: .brand-name span, .brand-tagline, .hero-highlights, .scroll-indicator
+
+EFFET: Éléments apparaissent de bas en haut.
+
+--------------------------------------------------------------------------------
+3. NAVIGATION ANIMATIONS
+--------------------------------------------------------------------------------
+
+A. FADE IN DOWN (Navbar au chargement):
+Duration: 300ms
+Effect: Opacity 0 → 1, TranslateY(-20px) → 0
+
+B. RIPPLE (Click sur nav-link):
+Voir section Ripple Effect ci-dessus.
+
+C. GLOW PULSE (Active link):
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }
+  50% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.6); }
+}
+Duration: 2s
+Iteration: infinite
+Target: .nav-link.active
+
+--------------------------------------------------------------------------------
+4. SCROLL-TRIGGERED ANIMATIONS
+--------------------------------------------------------------------------------
+
+TECHNIQUE:
+Intersection Observer API détecte quand section entre viewport.
+
+OBSERVER OPTIONS:
+{
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+}
+
+TARGETS:
+- Sections (.section)
+- Service cards
+- Team member card
+- Footer columns
+
+ANIMATION:
+Quand section intersects:
+- opacity: 0 → 1
+- transform: translateY(30px) → translateY(0)
+- transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1)
+
+STAGGER (Service cards):
+Chaque carte delay += 0.1s
+
+--------------------------------------------------------------------------------
+5. FOOTER ANIMATIONS
+--------------------------------------------------------------------------------
+
+A. FADE IN UP (Colonnes):
+@keyframes fadeInUp { /* identique hero */ }
+Duration: 0.8s
+Delays: 0.1s, 0.2s, 0.3s, 0.4s (4 colonnes)
+Target: .footer-column
+
+B. ROTATE BADGE (Icône étoile):
+@keyframes rotate-badge {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+Duration: 20s
+Iteration: infinite linear
+Target: .badge-icon svg
+
+C. SHIMMER (CTA Button):
+Voir Shimmer Effects section.
+
+--------------------------------------------------------------------------------
+6. TRANSITIONS HOVER
+--------------------------------------------------------------------------------
+
+STANDARD TRANSITION:
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+ÉLÉMENTS:
+- Links: 300ms (color, transform)
+- Buttons: 300ms (transform, box-shadow, background)
+- Cards: 300ms (transform, border, box-shadow, background)
+- Icons: 300ms (transform, color)
+
+TRANSFORMS HOVER TYPIQUES:
+- Links: translateX(5px)
+- Cards: translateY(-8px)
+- Buttons: translateY(-2px) scale(1.05)
+- Icons: rotate(360deg) ou scale(1.1)
+
+--------------------------------------------------------------------------------
+7. CANVAS ANIMATIONS (JavaScript)
+--------------------------------------------------------------------------------
+
+PARTICLES SYSTEM (Hero):
+
+SPECS:
+- 150 particules
+- Position initiale aléatoire
+- Vitesse aléatoire (speedX, speedY)
+- Rayon: 1-2px
+- Couleur: rgba(212, 175, 55, varying opacity)
+
+COMPORTEMENT:
+□ Chaque frame (requestAnimationFrame):
+  1. Clear canvas
+  2. Pour chaque particule:
+     - Update position (x += speedX, y += speedY)
+     - Wrap around si sort écran
+     - Draw particule (arc filled)
+  3. Connecter particules proches:
+     - Calculer distance entre toutes paires
+     - Si distance < 150px:
+       * Draw line entre elles
+       * Opacity = (1 - distance/150) * 0.15
+       * StrokeStyle: rgba(212, 175, 55, opacity)
+
+RÉSULTAT:
+Constellation animée de points dorés connectés.
+
+PERFORMANCE:
+- RequestAnimationFrame (60fps optimal)
+- Réduit à 100 particules sur mobile
+- Opacity canvas: 0.7 (réduit impact visuel)
+
+--------------------------------------------------------------------------------
+8. GRAIN ANIMATION
+--------------------------------------------------------------------------------
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+Duration: 8s
+Iteration: infinite steps(10)
+Target: body::before (grain overlay)
+
+EFFET: Grain bouge de façon saccadée type pellicule film.
+
+--------------------------------------------------------------------------------
+9. PERFORMANCE OPTIMIZATIONS
+--------------------------------------------------------------------------------
+
+□ Use transform/opacity (GPU accelerated) vs top/left
+□ will-change: transform; sur éléments animés fréquemment
+□ RequestAnimationFrame pour JS animations (sync avec refresh)
+□ Debounce/throttle scroll events
+□ Intersection Observer au lieu de scroll listeners continus
+□ Désactiver animations complexes sur mobile (media queries)
+□ prefers-reduced-motion: Désactiver toutes animations
+
+
+================================================================================
+VIII. SYSTÈME BILINGUE (EN/FR)
+================================================================================
+
+--------------------------------------------------------------------------------
+ARCHITECTURE
+--------------------------------------------------------------------------------
+
+FICHIER PRINCIPAL: assets/js/language.js
+
+STRUCTURE:
+1. Objet translations avec 2 langues
+2. Variable currentLang (défaut ou localStorage)
+3. Fonction setLanguage(lang)
+4. Fonction updateContent()
+5. Event listeners sur toggle et options
+6. Auto-init au DOMContentLoaded
+
+--------------------------------------------------------------------------------
+OBJET TRANSLATIONS
+--------------------------------------------------------------------------------
+
+STRUCTURE:
+const translations = {
+  en: {
+    'key-name': 'English text',
+    // ... ~50 clés
+  },
+  fr: {
+    'key-name': 'Texte français',
+    // ... ~50 clés
+  }
+}
+
+CATÉGORIES DE CLÉS:
+□ Navigation (5): nav-home, nav-about, nav-services, nav-team, nav-contact
+□ Hero (4): hero-tagline, hero-highlight1/2/3
+□ About (3): about-title, about-p1, about-p2
+□ Services (11): services-title, service1-5 (title + desc each)
+□ Team (3): team-title, team-henri-title, team-henri-bio
+□ Contact (4): contact-title, contact-phone/email/website
+□ Footer (9): footer-tagline/description/quicklinks/contact/connect/cta/
+               cta-button/rights/privacy/terms/badge
+□ Modal Form (12): modal-title/subtitle, form-name/email/phone/subject/
+                    message/submit, form-*-error (4), form-success-title/message
+
+TOTAL: ~51 clés de traduction
+
+--------------------------------------------------------------------------------
+FONCTIONNEMENT
+--------------------------------------------------------------------------------
+
+1. INITIALISATION:
+   □ Page load → DOMContentLoaded
+   □ Lire localStorage.getItem('motanoh-language')
+   □ Si existe → currentLang = valeur
+   □ Sinon → currentLang = 'en' (défaut)
+   □ Appeler setLanguage(currentLang)
+
+2. FONCTION setLanguage(lang):
+   □ Valider lang ('en' ou 'fr')
+   □ Update currentLang = lang
+   □ Sauver localStorage.setItem('motanoh-language', lang)
+   □ Update <html lang="en|fr">
+   □ updateMetaDescription(lang)
+   □ updateContent()
+   □ updateLanguageToggle()
+   □ announceLanguageChange(lang) (accessibility)
+
+3. FONCTION updateContent():
+   □ querySelectorAll('[data-lang-key]')
+   □ Pour chaque élément:
+     - key = element.getAttribute('data-lang-key')
+     - translation = translations[currentLang][key]
+     - element.textContent = translation
+   □ Warn si clé manquante
+
+4. FONCTION updateMetaDescription(lang):
+   □ Select meta[name="description"]
+   □ Si FR: Content = description FR
+   □ Si EN: Content = description EN
+
+5. FONCTION updateLanguageToggle():
+   □ querySelectorAll('.lang-option')
+   □ Pour chaque option:
+     - Si option lang === currentLang → .add('active')
+     - Sinon → .remove('active')
+   □ Update toggle background position:
+     - Si FR → #languageToggle.classList.add('fr-active')
+     - Si EN → .remove('fr-active')
+
+6. FONCTION announceLanguageChange(lang):
+   □ Créer div role="status" aria-live="polite"
+   □ TextContent: "Language changed to..." (pour screen readers)
+   □ Append à body
+   □ Timeout 1s → Remove div
+
+--------------------------------------------------------------------------------
+UI TOGGLE
+--------------------------------------------------------------------------------
+
+HTML:
+<button class="language-toggle" id="languageToggle">
+  <span class="lang-option active" data-lang="en">EN</span>
+  <span class="lang-separator">/</span>
+  <span class="lang-option" data-lang="fr">FR</span>
+</button>
+
+STYLE:
+□ Display: flex inline
+□ Border: 1px or
+□ Border-radius: 20px
+□ Padding: 8px 16px
+□ Background: Transparent → Or glass au hover
+□ Position relative pour ::before background slider
+
+BACKGROUND SLIDER (::before):
+□ Position: absolute
+□ Width: 50%
+□ Height: 100%
+□ Background: rgba(212, 175, 55, 0.2)
+□ Border-radius: inherit
+□ Transition: transform 300ms
+□ Default: Left (EN)
+□ .fr-active: Transform translateX(100%) (FR)
+
+INTERACTION:
+□ Click toggle → Toggle langue actuelle
+□ Click option individuelle → Set langue spécifique
+□ Active option: Couleur or, bold
+□ Inactive option: Couleur gris
+
+--------------------------------------------------------------------------------
+EXEMPLES DE TRADUCTIONS
+--------------------------------------------------------------------------------
+
+HERO TAGLINE:
+EN: "Strategic Advisory Across the Full Business Lifecycle"
+FR: "Conseil stratégique tout au long du cycle de vie des entreprises"
+
+SERVICE 1 TITLE:
+EN: "Strategic Planning & Market Entry"
+FR: "Planification Stratégique & Entrée sur le Marché"
+
+SERVICE 1 DESC:
+EN: "Market analysis and entry strategies, competitive positioning, and
+     business model development tailored to your unique vision."
+FR: "Analyse de marché et stratégies d'entrée, positionnement concurrentiel
+     et développement de modèles d'affaires adaptés à votre vision unique."
+
+TEAM BIO:
+EN: "Henri-Joel brings extensive experience in business development and
+     strategic partnerships across West African markets. His expertise in
+     identifying growth opportunities and building lasting client relationships
+     drives Motanoh & Co.'s commitment to excellence in advisory services."
+FR: "Henri-Joel apporte une vaste expérience en développement commercial et
+     partenariats stratégiques sur les marchés d'Afrique de l'Ouest. Son
+     expertise dans l'identification d'opportunités de croissance et la
+     construction de relations clients durables renforce l'engagement de
+     Motanoh & Co. envers l'excellence dans les services de conseil."
+
+--------------------------------------------------------------------------------
+PERSISTENCE
+--------------------------------------------------------------------------------
+
+MÉCANISME:
+□ localStorage.setItem('motanoh-language', 'en|fr')
+□ localStorage.getItem('motanoh-language')
+
+COMPORTEMENT:
+□ User change langue → Sauvegardé immédiatement
+□ User revient sur site → Langue restaurée
+□ Persist entre sessions
+□ Persist entre onglets (même domaine)
+
+FALLBACK:
+Si localStorage indisponible (navigation privée, etc.):
+→ Utilise variable en mémoire (perdu au refresh)
+
+
+================================================================================
+IX. RESPONSIVE DESIGN
+================================================================================
+
+--------------------------------------------------------------------------------
+APPROCHE: MOBILE-FIRST
+--------------------------------------------------------------------------------
+
+Base styles = Mobile (320px+)
+Media queries = Ajouts progressifs pour écrans plus grands
+
+--------------------------------------------------------------------------------
+BREAKPOINTS
+--------------------------------------------------------------------------------
+
+□ MOBILE:       320px - 767px    (Default, pas de media query)
+□ TABLET:       768px - 1024px   @media (min-width: 768px)
+□ DESKTOP:      1025px - 1440px  @media (min-width: 1025px)
+□ LARGE DESK:   1441px+          @media (min-width: 1441px)
+
+QUERIES SPÉCIALES:
+□ Tablet specific: @media (min-width: 768px) and (max-width: 1024px)
+□ Mobile specific: @media (max-width: 767px)
+□ Landscape mobile: @media (max-width: 767px) and (orientation: landscape)
+□ Touch devices: @media (hover: none) and (pointer: coarse)
+□ Print: @media print
+□ Reduced motion: @media (prefers-reduced-motion: reduce)
+□ High contrast: @media (prefers-contrast: high)
+
+--------------------------------------------------------------------------------
+MOBILE (< 768px)
+--------------------------------------------------------------------------------
+
+LAYOUT:
+□ Container padding: 16px (vs 24px+ desktop)
+□ Section padding: 64px 0 (vs 96px desktop)
+□ Grid: Single column tout
+
+TYPOGRAPHY:
+□ H1: clamp(2rem, 10vw, 3rem) → 32-48px
+□ H2: 1.75rem → 28px
+□ H3: 1.25rem → 20px
+□ Body: 1rem → 16px
+
+NAVIGATION:
+□ Hamburger menu visible
+□ Nav links hidden → dropdown
+□ Language toggle centré
+
+HERO:
+□ Brand name: 2-3rem (plus petit)
+□ Ampersand: 1.5-2.5rem
+□ Tagline: 0.875-1.125rem
+□ Decorative dashes hidden
+□ Geometric shapes hidden (performance)
+□ Particles opacity: 0.5 (réduit)
+□ Highlights: Stack vertical, width 100%, max-width 300px
+
+SERVICES:
+□ Grid: 1 colonne
+□ Cards: padding 32px 16px (réduit)
+□ Gap: 16px
+
+TEAM:
+□ Grid: 1 colonne
+
+FOOTER:
+□ Grid: 1 colonne
+□ All columns stacked
+□ Brand col: text-center
+□ Contact col: max-width 300px, centré
+□ Wave height: 50px (vs 80px)
+
+EFFECTS:
+□ Glassmorphism: blur(10px) (vs 20px)
+□ Cursor glow: hidden
+□ Grain: opacity 0.01 (vs 0.015)
+□ Parallax: disabled
+□ Tilt 3D: disabled
+□ Shimmer title: hidden
+
+BACK TO TOP:
+□ Bottom 20px, Right 20px (vs 30px)
+□ Size: 48x48 (vs 56x56)
+
+--------------------------------------------------------------------------------
+TABLET (768px - 1024px)
+--------------------------------------------------------------------------------
+
+TYPOGRAPHY:
+□ H1: clamp(3.5rem, 7vw, 5rem) → 56-80px
+□ H2: 2rem → 32px
+□ H3: 1.5rem → 24px
+
+NAVIGATION:
+□ Horizontal (pas hamburger)
+□ Gap réduit vs desktop
+□ Padding: 16px 24px
+
+HERO:
+□ Brand name: 3.5-5rem
+□ Ampersand: 3-4rem
+□ Tagline: 1.125-1.375rem
+□ Min-height: 90vh (vs 100vh)
+□ Highlights: 3 colonnes, min-width 160px
+
+SERVICES:
+□ Grid: 2 colonnes
+□ Card 5 (si impair): Span 2 colonnes, max-width 600px, centré
+
+TEAM:
+□ Grid: 2 colonnes
+
+FOOTER:
+□ Grid: 2 colonnes
+□ Brand col: Span 2 (full-width top), text-center
+□ Wave height: 60px
+
+EFFECTS:
+□ Glassmorphism: blur(15px)
+□ Cursor glow: 300x300 (réduit)
+
+--------------------------------------------------------------------------------
+DESKTOP (1025px+)
+--------------------------------------------------------------------------------
+
+TYPOGRAPHY:
+□ H1: clamp(3rem, 8vw, 6rem) → 48-96px
+□ H2: 2.5rem → 40px
+□ H3: 1.75rem → 28px
+□ Body: 1.125rem → 18px
+
+NAVIGATION:
+□ Full horizontal
+□ All visible, espacé
+□ Padding: 16-24px 32-48px
+
+HERO:
+□ Min-height: 100vh
+□ Brand sizes maximales
+□ Highlights: 3 colonnes, min-width 180px
+
+SERVICES:
+□ Grid: 3 colonnes
+□ Layout spécial:
+  - Row 1: Cards 1, 2, 3
+  - Row 2: Cards 4, 5 (centrés avec margins auto)
+
+TEAM:
+□ Grid: auto-fit, minmax(350px, 1fr)
+□ Max-width: 1000px, centré
+
+FOOTER:
+□ Grid: 4 colonnes (2fr 1fr 1fr 1.5fr)
+□ Brand col: Normal width, text-left
+□ Wave height: 80px
+
+EFFECTS:
+□ All enabled
+□ Glassmorphism: blur(20px) full
+□ Cursor glow: 500x500 full
+
+--------------------------------------------------------------------------------
+LARGE DESKTOP (1441px+)
+--------------------------------------------------------------------------------
+
+ADDITIONAL:
+□ Container max-width: 1600px (vs 1400px)
+□ Nav max-width: 1600px
+□ H1: 4rem
+□ H2: 2.75rem
+□ H3: 2rem
+□ Body: 1.25rem
+□ Services grid max-width: 1400px, centré
+
+--------------------------------------------------------------------------------
+LANDSCAPE MOBILE
+--------------------------------------------------------------------------------
+
+ADJUSTMENTS:
+□ Hero min-height: auto (pas 100vh, trop haut)
+□ Hero padding: 96px 0
+□ Logo max-width: 300px
+□ Tagline size: 1.125rem
+
+--------------------------------------------------------------------------------
+TOUCH DEVICES
+--------------------------------------------------------------------------------
+
+@media (hover: none) and (pointer: coarse)
+
+ADJUSTMENTS:
+□ Remove hover transforms (peuvent causer bugs)
+□ Keep border/shadow hover effects
+□ Add active state (scale 0.98 au tap)
+
+EXEMPLE:
+.service-card:hover { transform: none; }
+.service-card:active { transform: scale(0.98); }
+
+--------------------------------------------------------------------------------
+CONTAINER WIDTHS
+--------------------------------------------------------------------------------
+
+□ Mobile: 100% - 32px padding (16px each side)
+□ Tablet: 100% - 48px padding (24px each side)
+□ Desktop: Max-width 1400px, padding 48px
+□ Large: Max-width 1600px, padding 48px
+
+CALCULATION:
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md); /* 24px */
+}
+
+@media (min-width: 1441px) {
+  .container { max-width: 1600px; }
+}
+
+--------------------------------------------------------------------------------
+IMAGES RESPONSIVE
+--------------------------------------------------------------------------------
+
+ALL IMAGES:
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+LOGO:
+Max-width varie selon breakpoint:
+- Mobile: 250px
+- Tablet: 400px
+- Desktop: 500px
+
+--------------------------------------------------------------------------------
+TESTING CHECKLIST
+--------------------------------------------------------------------------------
+
+DEVICES TO TEST:
+□ iPhone SE (375x667)
+□ iPhone 12/13 (390x844)
+□ iPhone 14 Pro Max (430x932)
+□ iPad Mini (768x1024)
+□ iPad Pro (1024x1366)
+□ Desktop 1920x1080
+□ Desktop 2560x1440
+
+BROWSERS:
+□ Chrome (desktop + mobile)
+□ Safari (desktop + iOS)
+□ Firefox
+□ Edge
+
+ORIENTATIONS:
+□ Portrait
+□ Landscape (surtout mobile)
+
+FEATURES TO TEST:
+□ Navigation (menu, links, smooth scroll)
+□ Language toggle
+□ Forms (contact modal)
+□ All hover effects
+□ Touch interactions
+□ Keyboard navigation
+□ Zoom (200%)
+
+
+================================================================================
+X. SEO & OPTIMISATIONS
+================================================================================
+
+--------------------------------------------------------------------------------
+META TAGS (index.html <head>)
+--------------------------------------------------------------------------------
+
+PRIMARY:
+<title>Motanoh & Co. | Strategic Advisory Across the Full Business Lifecycle</title>
+<meta name="description" content="Premier strategic advisory firm in Côte
+  d'Ivoire. We provide expert guidance across the full business lifecycle -
+  from strategic planning to exit strategies.">
+<meta name="keywords" content="strategic advisory, business consulting,
+  Côte d'Ivoire, Ivory Coast, business development, strategic planning,
+  market entry, operational excellence, financial advisory, M&A advisory,
+  Henri-Joel Otokore">
+<meta name="author" content="Motanoh & Co.">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+<meta name="revisit-after" content="7 days">
+
+CANONICAL:
+<link rel="canonical" href="https://www.motanoh-co.com/">
+
+OPEN GRAPH (Facebook, LinkedIn):
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.motanoh-co.com/">
+<meta property="og:title" content="Motanoh & Co. | Strategic Advisory...">
+<meta property="og:description" content="Premier strategic advisory firm...">
+<meta property="og:image" content="https://www.motanoh-co.com/assets/images/og-image.jpg">
+<meta property="og:image:alt" content="Motanoh & Co. - Strategic Advisory">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:site_name" content="Motanoh & Co.">
+
+TWITTER CARD:
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://www.motanoh-co.com/">
+<meta name="twitter:title" content="Motanoh & Co. | Strategic Advisory">
+<meta name="twitter:description" content="Premier strategic advisory firm...">
+<meta name="twitter:image" content="https://www.motanoh-co.com/assets/images/twitter-card.jpg">
+
+GEO TAGS:
+<meta name="geo.region" content="CI">
+<meta name="geo.placename" content="Côte d'Ivoire">
+
+THEME:
+<meta name="theme-color" content="#d4af37">
+<meta name="msapplication-TileColor" content="#0a0a0a">
+
+FAVICON:
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+--------------------------------------------------------------------------------
+STRUCTURED DATA (Schema.org)
+--------------------------------------------------------------------------------
+
+TYPE: ProfessionalService
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Motanoh & Co.",
+  "description": "Premier strategic advisory firm in Côte d'Ivoire...",
+  "url": "https://www.motanoh-co.com",
+  "logo": "https://www.motanoh-co.com/assets/images/logo-motanoh.jpeg",
+  "image": "https://www.motanoh-co.com/assets/images/og-image.jpg",
+  "telephone": "+225-07-57-368-526",
+  "email": "henrijoel.o@motanoh-co.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CI",
+    "addressRegion": "Côte d'Ivoire"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "addressCountry": "CI"
+  },
+  "sameAs": [
+    "https://linkedin.com/company/motanoh"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Strategic Advisory Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Strategic Planning & Market Entry",
+          "description": "Market analysis and entry strategies..."
+        }
+      },
+      /* ... 4 autres services */
+    ]
+  },
+  "employee": {
+    "@type": "Person",
+    "name": "Henri-Joel Otokore",
+    "jobTitle": "Associate, Business Development",
+    "sameAs": "https://linkedin.com/in/henri-joel-otokore"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Côte d'Ivoire"
+  },
+  "priceRange": "$$$$",
+  "slogan": "Strategic Advisory Across the Full Business Lifecycle"
+}
+</script>
+
+--------------------------------------------------------------------------------
+ROBOTS.TXT
+--------------------------------------------------------------------------------
+
+User-agent: *
+Allow: /
+
+Disallow: /assets/js/
+Disallow: /assets/css/
+
+Sitemap: https://www.motanoh-co.com/sitemap.xml
+
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+--------------------------------------------------------------------------------
+SITEMAP.XML
+--------------------------------------------------------------------------------
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <url>
+        <loc>https://www.motanoh-co.com/</loc>
+        <lastmod>2026-02-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en"
+                    href="https://www.motanoh-co.com/?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="fr"
+                    href="https://www.motanoh-co.com/?lang=fr"/>
+    </url>
+
+    <url>
+        <loc>https://www.motanoh-co.com/#about</loc>
+        <lastmod>2026-02-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Services, Team, Contact sections -->
+
+</urlset>
+
+--------------------------------------------------------------------------------
+.HTACCESS (Apache Configuration)
+--------------------------------------------------------------------------------
+
+FORCE HTTPS:
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+FORCE WWW:
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+GZIP COMPRESSION:
+AddOutputFilterByType DEFLATE text/html text/css text/javascript
+  application/javascript application/json image/svg+xml
+
+BROWSER CACHING:
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType application/javascript "access plus 1 month"
+
+SECURITY HEADERS:
+Header set X-Frame-Options "SAMEORIGIN"
+Header set X-Content-Type-Options "nosniff"
+Header set X-XSS-Protection "1; mode=block"
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+Header set Content-Security-Policy "default-src 'self'; script-src 'self'
+  'unsafe-inline' https://fonts.googleapis.com; style-src 'self'
+  'unsafe-inline' https://fonts.googleapis.com; ..."
+
+ERROR PAGES:
+ErrorDocument 404 /index.html
+ErrorDocument 403 /index.html
+ErrorDocument 500 /index.html
+
+--------------------------------------------------------------------------------
+PWA MANIFEST (site.webmanifest)
+--------------------------------------------------------------------------------
+
+{
+  "name": "Motanoh & Co. - Strategic Advisory",
+  "short_name": "Motanoh & Co.",
+  "description": "Premier strategic advisory firm in Côte d'Ivoire...",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#d4af37",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/images/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "consulting", "finance"],
+  "lang": "en",
+  "dir": "ltr"
+}
+
+--------------------------------------------------------------------------------
+PERFORMANCE OPTIMIZATIONS
+--------------------------------------------------------------------------------
+
+RECOMMENDATIONS (À implémenter):
+□ Minify CSS (reduce ~30%)
+□ Minify JavaScript (reduce ~40%)
+□ Compress images (JPEG 80% quality)
+□ Convert images to WebP (+ fallback)
+□ Lazy load images below fold
+□ Preload critical fonts
+□ Defer non-critical JS
+□ Enable Gzip/Brotli compression
+□ Set cache headers
+□ Use CDN (Cloudflare)
+
+TARGET METRICS:
+- PageSpeed Score: 90+ (mobile/desktop)
+- First Contentful Paint: < 1.5s
+- Largest Contentful Paint: < 2.5s
+- Time to Interactive: < 3.5s
+- Cumulative Layout Shift: < 0.1
+- Total page weight: < 500KB
+
+CURRENT ESTIMATE (Unoptimized):
+- HTML: ~30KB
+- CSS: ~120KB (all files)
+- JS: ~80KB (all files)
+- Images: ~200KB
+- Fonts: ~100KB (Google Fonts)
+- Total: ~530KB
+
+AFTER OPTIMIZATION:
+- HTML: ~25KB (minified)
+- CSS: ~70KB (minified)
+- JS: ~50KB (minified)
+- Images: ~100KB (WebP compressed)
+- Fonts: ~60KB (subset)
+- Total: ~305KB ✓
+
+
+================================================================================
+XI. ACCESSIBILITÉ
+================================================================================
+
+--------------------------------------------------------------------------------
+NIVEAU DE CONFORMITÉ
+--------------------------------------------------------------------------------
+
+STANDARD: WCAG 2.1 Level AA
+
+OBJECTIF: Accessible à tous, y compris personnes en situation de handicap.
+
+--------------------------------------------------------------------------------
+STRUCTURE SÉMANTIQUE
+--------------------------------------------------------------------------------
+
+HTML5 SEMANTIC ELEMENTS:
+□ <nav> - Navigation
+□ <header> - En-tête sections
+□ <main> - Contenu principal
+□ <section> - Sections thématiques
+□ <article> - Contenu autonome (team member)
+□ <footer> - Pied de page
+□ <button> - Boutons interactifs
+□ <form> - Formulaires
+
+HEADINGS HIERARCHY:
+□ H1: Une seule ("Motanoh & Co." dans hero)
+□ H2: Titres de sections (About, Services, Team)
+□ H3: Sous-titres (Service names, Team member name)
+□ Pas de skip levels (h2 → h4)
+
+LANDMARKS:
+□ role="navigation" sur <nav>
+□ role="main" sur <main> (implicite avec <main>)
+□ role="contentinfo" sur <footer> (implicite)
+□ role="dialog" sur modal
+□ role="status" pour annonces screen reader
+
+--------------------------------------------------------------------------------
+ARIA ATTRIBUTES
+--------------------------------------------------------------------------------
+
+LABELS:
+□ aria-label sur boutons sans texte visible:
+  - Mobile menu toggle: "Toggle menu"
+  - Close modal: "Close modal"
+  - Back to top: "Back to top"
+  - Social links: "LinkedIn profile"
+□ aria-labelledby sur modal (pointe vers titre)
+
+STATES:
+□ aria-expanded="true|false" sur menu toggle
+□ aria-current="page" sur nav link actif
+□ aria-hidden="true" sur décoratifs (icons)
+□ aria-live="polite" pour annonces langue
+
+MODAL:
+□ role="dialog"
+□ aria-modal="true"
+□ aria-labelledby="contactModalTitle"
+
+FORM:
+□ Labels associés à inputs (for="inputId")
+□ aria-required="true" si requis
+□ aria-invalid="true" si erreur
+□ aria-describedby pour messages erreur
+
+--------------------------------------------------------------------------------
+NAVIGATION CLAVIER
+--------------------------------------------------------------------------------
+
+TAB ORDER:
+□ Ordre logique (top → bottom, left → right)
+□ Skip links possibles (future: "Skip to main content")
+□ Focus visible sur tous éléments interactifs
+
+FOCUS INDICATORS:
+□ Default outline ou custom:
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
+□ Never outline: none sans alternative
+
+KEYBOARD SHORTCUTS:
+□ Enter/Space: Activer boutons/links
+□ Escape: Fermer modal
+□ Tab: Next element
+□ Shift+Tab: Previous element
+
+FOCUS TRAP (Modal):
+□ Focus limité aux éléments dans modal
+□ Tab cycle dans modal
+□ Premier élément focus à ouverture
+□ Retour à trigger element à fermeture
+
+--------------------------------------------------------------------------------
+CONTRASTE COULEURS
+--------------------------------------------------------------------------------
+
+RATIOS (WCAG AA):
+Texte normal: 4.5:1 minimum
+Texte large (18pt+): 3:1 minimum
+
+VÉRIFICATIONS:
+□ Blanc (#fff) sur Noir (#0a0a0a): 20.71:1 ✓
+□ Gris clair (#e0e0e0) sur Noir (#0a0a0a): 16.85:1 ✓
+□ Gris (#ccc) sur Noir (#0a0a0a): 14.56:1 ✓
+□ Or (#d4af37) sur Noir (#0a0a0a): 7.93:1 ✓
+□ Noir (#0a0a0a) sur Or (#d4af37): 7.93:1 ✓
+
+HIGH CONTRAST MODE:
+@media (prefers-contrast: high) {
+  --accent-gold: #ffd700; /* Or plus lumineux */
+  --text-white: #ffffff;
+  .service-card { border-width: 2px; }
+}
+
+--------------------------------------------------------------------------------
+IMAGES
+--------------------------------------------------------------------------------
+
+ALT TEXT:
+□ Logo: "Motanoh & Co. logo"
+□ Icons décoratives: aria-hidden="true" ou alt=""
+□ Icons fonctionnelles: alt descriptif
+□ OG image: og:image:alt
+
+SVG ACCESSIBILITY:
+□ <svg aria-hidden="true"> si décoratif
+□ <svg role="img" aria-label="..."> si informatif
+□ <title> et <desc> dans SVG si nécessaire
+
+--------------------------------------------------------------------------------
+SCREEN READERS
+--------------------------------------------------------------------------------
+
+TESTED WITH:
+□ NVDA (Windows)
+□ JAWS (Windows)
+□ VoiceOver (Mac/iOS)
+□ TalkBack (Android)
+
+ANNOUNCEMENTS:
+□ Page title annoncé
+□ Headings navigables
+□ Links descriptifs (pas "click here")
+□ Form labels clairs
+□ Errors annoncés
+□ Success messages annoncés
+□ Language changes annoncés:
+  <div role="status" aria-live="polite">
+    Language changed to French
+  </div>
+
+HIDDEN CONTENT:
+□ .sr-only class pour texte screen-reader only:
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+--------------------------------------------------------------------------------
+FORMULAIRES
+--------------------------------------------------------------------------------
+
+LABELS:
+□ Tous inputs ont <label> associé
+□ <label for="inputId">Text</label>
+□ <input id="inputId" name="...">
+
+REQUIRED FIELDS:
+□ Attribut required
+□ Indicateur visuel (*)
+□ aria-required="true"
+
+VALIDATION:
+□ Messages erreur clairs
+□ aria-invalid="true" si erreur
+□ aria-describedby pointe vers message
+□ Color + icon (pas que couleur)
+
+EXEMPLE:
+<input
+  id="email"
+  type="email"
+  required
+  aria-required="true"
+  aria-invalid="true"
+  aria-describedby="emailError"
+>
+<span id="emailError" class="error">
+  Please enter a valid email address
+</span>
+
+--------------------------------------------------------------------------------
+REDUCED MOTION
+--------------------------------------------------------------------------------
+
+@media (prefers-reduced-motion: reduce) {
+
+  /* Désactiver animations */
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* Smooth scroll → Auto */
+  html { scroll-behavior: auto; }
+
+  /* Animations spécifiques */
+  .scroll-indicator { animation: none; }
+  .particles-canvas { display: none; }
+  #cursorGlow { display: none; }
+  body::before { animation: none; } /* Grain */
+
+}
+
+--------------------------------------------------------------------------------
+LANGUAGE SWITCHING
+--------------------------------------------------------------------------------
+
+HTML LANG:
+□ <html lang="en"> ou <html lang="fr">
+□ Updated dynamiquement par JS
+
+HREFLANG (SEO):
+□ Meta tags pour alternates langues
+□ Sitemap avec hreflang
+
+CONTENT:
+□ Tout contenu traduit (pas de mix)
+□ Dates, nombres formatés selon locale
+□ Direction text (LTR, ou RTL si arabe ajouté)
+
+--------------------------------------------------------------------------------
+TESTING TOOLS
+--------------------------------------------------------------------------------
+
+AUTOMATED:
+□ Lighthouse (Chrome DevTools)
+□ axe DevTools (extension)
+□ WAVE (Web Accessibility Evaluation Tool)
+□ Pa11y
+
+MANUAL:
+□ Keyboard navigation test
+□ Screen reader test
+□ Zoom test (200%, 400%)
+□ Color blindness simulators
+□ Mobile magnification
+
+CHECKLIST:
+□ All interactive elements keyboard accessible
+□ Focus visible on all elements
+□ Skip links present (if long nav)
+□ Headings logical hierarchy
+□ Alt text on all images
+□ Forms fully labeled
+□ Error messages clear
+□ Color contrast sufficient
+□ Works without CSS
+□ Works without JavaScript (graceful degradation)
+
+
+================================================================================
+XII. TECHNOLOGIES UTILISÉES
+================================================================================
+
+--------------------------------------------------------------------------------
+LANGAGES
+--------------------------------------------------------------------------------
+
+□ HTML5
+  - Version: Living Standard
+  - Semantic elements
+  - Data attributes
+  - Forms validation
+
+□ CSS3
+  - Custom properties (variables)
+  - Flexbox
+  - Grid
+  - Animations/Transitions
+  - Media queries
+  - Pseudo-elements
+  - Backdrop-filter
+  - Clamp(), calc()
+
+□ JavaScript (ES6+)
+  - Vanilla (no frameworks)
+  - ES6 features: const/let, arrow functions, template literals
+  - DOM manipulation
+  - Event listeners
+  - localStorage API
+  - Intersection Observer API
+  - RequestAnimationFrame
+  - Canvas API
+
+--------------------------------------------------------------------------------
+LIBRAIRIES & DÉPENDANCES
+--------------------------------------------------------------------------------
+
+FONTS:
+□ Google Fonts:
+  - Playfair Display (400, 600, 700)
+  - Cormorant Garamond (300, 400, 600)
+  - Lato (300, 400, 700)
+
+DEPENDENCIES:
+□ Aucune librairie JS externe
+  - Pas de jQuery
+  - Pas de React/Vue
+  - 100% Vanilla JavaScript
+
+SVG:
+□ Inline SVG pour icons
+  - Feather Icons style
+  - Custom paths
+
+--------------------------------------------------------------------------------
+APIS & SERVICES
+--------------------------------------------------------------------------------
+
+BROWSER APIS:
+□ localStorage - Persistence langue
+□ IntersectionObserver - Scroll animations
+□ RequestAnimationFrame - Smooth animations
+□ Canvas 2D Context - Particles
+□ Fetch API - Form submission (préparé)
+
+THIRD-PARTY (À configurer):
+□ Google Analytics 4 (optionnel)
+□ EmailJS ou Formspree (email form)
+□ Calendly (booking, optionnel)
+
+--------------------------------------------------------------------------------
+OUTILS DE DÉVELOPPEMENT
+--------------------------------------------------------------------------------
+
+RECOMMANDÉS:
+□ VS Code (IDE)
+□ Live Server (dev server)
+□ Chrome DevTools (debug)
+□ Git (version control)
+
+BUILD TOOLS (Futurs):
+□ PostCSS (autoprefixer)
+□ Terser (JS minification)
+□ cssnano (CSS minification)
+□ ImageOptim (image compression)
+
+--------------------------------------------------------------------------------
+HÉBERGEMENT & DÉPLOIEMENT
+--------------------------------------------------------------------------------
+
+OPTIONS:
+□ Netlify (recommandé)
+□ Vercel
+□ GitHub Pages
+□ Hébergement traditionnel (cPanel)
+
+DOMAINE:
+□ www.motanoh-co.com
+
+SSL:
+□ Let's Encrypt (gratuit)
+□ Ou certificat payant
+
+CDN (Optionnel):
+□ Cloudflare (gratuit)
+
+--------------------------------------------------------------------------------
+VERSION CONTROL
+--------------------------------------------------------------------------------
+
+GIT:
+□ Repository local
+□ .gitignore (node_modules, .DS_Store, etc.)
+□ Branches: main (production)
+
+COMMITS:
+□ Conventional commits
+□ Messages descriptifs
+
+--------------------------------------------------------------------------------
+COMPATIBILITÉ NAVIGATEURS
+--------------------------------------------------------------------------------
+
+SUPPORT:
+□ Chrome/Edge (Chromium): Dernières 2 versions
+□ Firefox: Dernières 2 versions
+□ Safari: Dernières 2 versions (macOS + iOS)
+□ Chrome Mobile: Dernière version
+□ Safari Mobile: Dernière version
+
+FEATURES MODERNES UTILISÉES:
+□ CSS Grid (>95% support)
+□ Flexbox (>98% support)
+□ CSS Variables (>95% support)
+□ Backdrop-filter (>92% support)
+  - Fallback: Solid background si non supporté
+□ Intersection Observer (>95% support)
+  - Fallback: Simple display sans animation
+□ LocalStorage (>98% support)
+
+POLYFILLS:
+□ Aucun nécessaire pour cibles modernes
+□ Si support IE11 requis (non recommandé):
+  - Ajouter polyfills pour IntersectionObserver
+  - Ajouter autoprefixer pour CSS
+
+
+================================================================================
+NOTES FINALES
+================================================================================
+
+Ce document décrit l'état actuel du site Motanoh & Co. Version 2.0.
+
+STATUT: Production Ready (avec création images requises)
+
+DERNIÈRES ÉTAPES AVANT DÉPLOIEMENT:
+1. Créer favicons (7 fichiers)
+2. Créer Open Graph image (1200x630)
+3. Créer Twitter card image (1200x675)
+4. Configurer service email (EmailJS/Formspree)
+5. Tester sur devices réels
+6. Déployer sur Netlify
+7. Configurer domaine
+8. Soumettre sitemap à Google
+
+MAINTENANCE:
+- Mise à jour contenu via language.js
+- Ajout membres équipe via HTML
+- Blog futur (voir AMELIORATIONS-POSSIBLES.txt)
+
+SUPPORT:
+Email: henrijoel.o@motanoh-co.com
+Documentation: README.md, SEO-SETUP.md, DEPLOYMENT.md
+
+
+================================================================================
+DERNIÈRE MISE À JOUR: Février 2026
+VERSION DU SITE: 2.0 Premium Edition
+VERSION DU DOCUMENT: 1.0
+================================================================================
