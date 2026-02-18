@@ -1,0 +1,365 @@
+================================================================================
+GUIDE COMPLET - GIT & NETLIFY - MOTANOH & CO. WEBSITE
+================================================================================
+
+📍 INFORMATIONS DU SITE
+--------------------------------------------------------------------------------
+Site en ligne:     https://motanoh-website.netlify.app
+Repository GitHub: https://github.com/SaitamaHeisenberg/motanoh-website
+Hébergement:       Netlify (Gratuit, illimité dans le temps)
+Dossier local:     C:\Users\AJB_ELITE\Desktop\motanoh-website
+
+
+================================================================================
+COMMANDES GIT ESSENTIELLES
+================================================================================
+
+📁 NAVIGUER VERS LE DOSSIER DU PROJET
+--------------------------------------------------------------------------------
+cd C:\Users\AJB_ELITE\Desktop\motanoh-website
+
+
+🔍 VÉRIFIER L'ÉTAT DU PROJET
+--------------------------------------------------------------------------------
+git status
+
+→ Affiche les fichiers modifiés, ajoutés, supprimés
+
+
+📝 AJOUTER DES FICHIERS À COMMITER
+--------------------------------------------------------------------------------
+
+# Ajouter TOUS les fichiers modifiés:
+git add .
+
+# Ajouter un fichier spécifique:
+git add index.html
+git add assets/css/styles.css
+
+# Ajouter plusieurs fichiers:
+git add index.html assets/css/styles.css assets/js/main.js
+
+
+💾 CRÉER UN COMMIT (Enregistrer les modifications)
+--------------------------------------------------------------------------------
+
+# Commit avec message court:
+git commit -m "Description des modifications"
+
+# Exemples de messages de commit:
+git commit -m "Mise à jour de la section About"
+git commit -m "Correction du formulaire de contact"
+git commit -m "Ajout de nouvelles images"
+git commit -m "Optimisation responsive mobile"
+
+# Commit avec message détaillé:
+git commit -m "$(cat <<'EOF'
+Titre du commit
+
+- Modification 1
+- Modification 2
+- Modification 3
+
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
+EOF
+)"
+
+
+🚀 POUSSER LES MODIFICATIONS SUR GITHUB (Publier)
+--------------------------------------------------------------------------------
+
+# Pousser vers GitHub (déclenchera un redéploiement automatique sur Netlify):
+git push
+
+# Ou version complète:
+git push origin main
+
+
+📜 VOIR L'HISTORIQUE DES COMMITS
+--------------------------------------------------------------------------------
+
+# Voir les derniers commits:
+git log
+
+# Voir les 5 derniers commits:
+git log -5
+
+# Voir l'historique simplifié:
+git log --oneline
+
+# Quitter la vue log:
+Appuyez sur "q"
+
+
+🔄 VOIR LES DIFFÉRENCES (Avant de commiter)
+--------------------------------------------------------------------------------
+
+# Voir toutes les modifications non commitées:
+git diff
+
+# Voir les modifications d'un fichier spécifique:
+git diff index.html
+
+
+⚙️ VÉRIFIER LA CONFIGURATION
+--------------------------------------------------------------------------------
+
+# Voir les remotes (GitHub):
+git remote -v
+
+# Voir la branche actuelle:
+git branch
+
+
+================================================================================
+WORKFLOW COMPLET - MODIFIER ET PUBLIER LE SITE
+================================================================================
+
+ÉTAPE 1: Modifier les fichiers
+--------------------------------------------------------------------------------
+→ Éditez vos fichiers (index.html, CSS, JS, images, etc.)
+→ Testez localement en ouvrant index.html dans le navigateur
+
+
+ÉTAPE 2: Vérifier les modifications
+--------------------------------------------------------------------------------
+cd C:\Users\AJB_ELITE\Desktop\motanoh-website
+git status
+
+
+ÉTAPE 3: Ajouter les fichiers modifiés
+--------------------------------------------------------------------------------
+git add .
+
+
+ÉTAPE 4: Créer un commit
+--------------------------------------------------------------------------------
+git commit -m "Description de vos modifications"
+
+
+ÉTAPE 5: Pousser vers GitHub
+--------------------------------------------------------------------------------
+git push
+
+
+ÉTAPE 6: Vérifier le déploiement
+--------------------------------------------------------------------------------
+→ Allez sur: https://app.netlify.com/sites/motanoh-website/deploys
+→ Attendez 30-60 secondes
+→ Votre site sera mis à jour automatiquement!
+→ Visitez: https://motanoh-website.netlify.app
+
+
+================================================================================
+EXEMPLE COMPLET - MISE À JOUR TYPIQUE
+================================================================================
+
+# 1. Naviguer vers le projet
+cd C:\Users\AJB_ELITE\Desktop\motanoh-website
+
+# 2. Vérifier l'état
+git status
+
+# 3. Ajouter tous les fichiers modifiés
+git add .
+
+# 4. Créer le commit
+git commit -m "Mise à jour des informations de contact"
+
+# 5. Pousser vers GitHub (et Netlify)
+git push
+
+→ FAIT! Site mis à jour en 1 minute!
+
+
+================================================================================
+COMMANDES UTILES SUPPLÉMENTAIRES
+================================================================================
+
+🔙 ANNULER DES MODIFICATIONS (Avant commit)
+--------------------------------------------------------------------------------
+
+# Annuler les modifications d'un fichier:
+git checkout -- index.html
+
+# Annuler toutes les modifications non commitées:
+git checkout -- .
+
+# Retirer un fichier du staging (après git add):
+git reset index.html
+
+
+📦 RÉCUPÉRER LA DERNIÈRE VERSION DEPUIS GITHUB
+--------------------------------------------------------------------------------
+
+# Télécharger les dernières modifications:
+git pull
+
+
+🏷️ CRÉER UNE BRANCHE (Pour tester des modifications)
+--------------------------------------------------------------------------------
+
+# Créer et basculer vers une nouvelle branche:
+git checkout -b test-modifications
+
+# Retourner à la branche principale:
+git checkout main
+
+
+================================================================================
+DÉPANNAGE - PROBLÈMES COURANTS
+================================================================================
+
+❌ ERREUR: "fatal: not a git repository"
+--------------------------------------------------------------------------------
+Solution:
+cd C:\Users\AJB_ELITE\Desktop\motanoh-website
+
+
+❌ ERREUR: "Your branch is behind 'origin/main'"
+--------------------------------------------------------------------------------
+Solution:
+git pull
+
+
+❌ ERREUR: Conflit lors du push
+--------------------------------------------------------------------------------
+Solution:
+git pull
+# Résoudre les conflits manuellement
+git add .
+git commit -m "Résolution des conflits"
+git push
+
+
+❌ ERREUR: "Permission denied" ou problème d'authentification
+--------------------------------------------------------------------------------
+Solution:
+# Utilisez un Personal Access Token (PAT) GitHub au lieu du mot de passe
+# Créez-en un sur: https://github.com/settings/tokens
+
+
+❌ Le site ne se met pas à jour après git push
+--------------------------------------------------------------------------------
+Solution:
+1. Vérifiez que le push a réussi: git log
+2. Allez sur Netlify: https://app.netlify.com/sites/motanoh-website/deploys
+3. Vérifiez le statut du déploiement
+4. Si erreur, cliquez sur le déploiement pour voir les logs
+
+
+================================================================================
+NETLIFY - GESTION DU SITE
+================================================================================
+
+🌐 DASHBOARD NETLIFY
+--------------------------------------------------------------------------------
+URL: https://app.netlify.com/sites/motanoh-website
+
+
+📊 VOIR LES DÉPLOIEMENTS
+--------------------------------------------------------------------------------
+URL: https://app.netlify.com/sites/motanoh-website/deploys
+
+
+⚙️ PARAMÈTRES DU SITE
+--------------------------------------------------------------------------------
+URL: https://app.netlify.com/sites/motanoh-website/settings
+
+
+🔗 CHANGER LE NOM DU SITE
+--------------------------------------------------------------------------------
+1. Allez dans: Site settings → Domain management
+2. Cliquez sur "Options" → "Edit site name"
+3. Changez "motanoh-website" en "motanoh-co" (par exemple)
+4. Le site sera accessible sur: motanoh-co.netlify.app
+
+
+🌍 AJOUTER UN DOMAINE PERSONNALISÉ (optionnel, payant)
+--------------------------------------------------------------------------------
+1. Achetez un domaine (ex: www.motanoh-co.com)
+2. Dans Netlify: Domain management → Add custom domain
+3. Suivez les instructions pour configurer les DNS
+
+
+================================================================================
+MODIFICATIONS COURANTES
+================================================================================
+
+✏️ MODIFIER LE TEXTE
+--------------------------------------------------------------------------------
+Fichier: index.html
+→ Cherchez le texte à modifier
+→ Modifiez directement dans le HTML
+
+
+🎨 MODIFIER LES COULEURS
+--------------------------------------------------------------------------------
+Fichier: assets/css/styles.css
+→ Cherchez les variables CSS (début du fichier):
+  --primary-black: #0a0a0a;
+  --accent-gold: #d4af37;
+
+
+📧 MODIFIER LES INFORMATIONS DE CONTACT
+--------------------------------------------------------------------------------
+Fichier: index.html (section Contact)
+Fichier: assets/js/language.js (traductions)
+
+
+🖼️ AJOUTER/CHANGER DES IMAGES
+--------------------------------------------------------------------------------
+1. Placez la nouvelle image dans: assets/images/
+2. Modifiez le chemin dans index.html:
+   <img src="assets/images/votre-image.jpg" alt="Description">
+
+
+🌐 MODIFIER LES TRADUCTIONS (EN/FR)
+--------------------------------------------------------------------------------
+Fichier: assets/js/language.js
+→ Modifiez les objets "en" et "fr"
+
+
+================================================================================
+RAPPELS IMPORTANTS
+================================================================================
+
+✅ Toujours tester localement avant de pousser
+✅ Faire des commits réguliers avec des messages clairs
+✅ Vérifier git status avant de commiter
+✅ Ne jamais commiter de fichiers sensibles (.env, mots de passe)
+✅ Le site se met à jour automatiquement après git push (30-60 sec)
+
+
+================================================================================
+CONTACT & SUPPORT
+================================================================================
+
+Site web:          https://motanoh-website.netlify.app
+GitHub Repository: https://github.com/SaitamaHeisenberg/motanoh-website
+Netlify Dashboard: https://app.netlify.com/sites/motanoh-website
+
+Documentation Git:     https://git-scm.com/doc
+Documentation Netlify: https://docs.netlify.com
+GitHub Help:           https://docs.github.com
+
+
+================================================================================
+RÉSUMÉ ULTRA-RAPIDE
+================================================================================
+
+POUR METTRE À JOUR LE SITE:
+
+cd C:\Users\AJB_ELITE\Desktop\motanoh-website
+git add .
+git commit -m "Votre message"
+git push
+
+→ Attendez 1 minute → Site mis à jour! ✅
+
+
+================================================================================
+Créé le: 2026-02-18
+Dernière mise à jour: 2026-02-18
+Version: 1.0
+================================================================================
